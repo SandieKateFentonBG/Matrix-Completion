@@ -26,6 +26,7 @@ from data_initialization import *
 studied_data = load_data(path = input_path, study)
 x_train, x_test, x_val = split_data(studied_data)    #TODO: repeat 5 times? shuffle? mean/scale/normalize?
 trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val)
+#TODO : at what stage should we do dataloader vs full data > batch size dim?
 
 print("train :", x_train.shape)
 print("test :", x_test.shape)

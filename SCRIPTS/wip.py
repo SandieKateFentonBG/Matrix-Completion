@@ -6,6 +6,24 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
 
+loss = nn.MSELoss()
+input = torch.randn(3, 5, requires_grad=True)
+target = torch.randn(3, 5)
+output = loss(input, target)
+output.backward()
+test = torch.sum(input, target)
+print(input)
+print(target)
+print(test)
+print(output)
+print(type(output))
+print(output.shape)
+
+"""x = torch.tensor([1.0])
+a = torch.tensor([0.1301,-1.1083])
+a.item()
+print(a)"""
+
 #https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module
 # Load dataset
 

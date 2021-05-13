@@ -8,6 +8,8 @@ import torch.optim as optim
 
 # Parameters
 
+
+
 study = 0 # 0=item_data, 1=user_data
 batch_size = 8
 input_dim = [7699,158] # ratings_per_item, ratings_per_user
@@ -23,12 +25,27 @@ regularization_term = 0.5
 # Load data
 path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv'
 user_data = np.genfromtxt(path, delimiter=';', dtype='str', usecols = (i for i in range(1,159))) #first column removed
+
 user_data = np.char.replace(user_data, ',', '.').astype(float)
+#user_data = np.where(user_data > 20, 'NaN', user_data)
+
+t = torch.Tensor([1, 2, 2])
+print ((t == 2).nonzero(as_tuple=True)[0])
+
+def remove_missing_ratings(full_tensor, batch_data, placeholder = '99.'):
+    index = None
+    for data in batch_data:
+        indices = (batch_data == float(placeholder)).nonzero(as_tuple=True)[0]
+    for i in indices :
+        full_tensor[i] = 0
+    return full_tensor
+
+
 item_data = np.transpose(user_data)
 combined_data = [item_data, user_data]
 user_tensor = torch.tensor(user_data)
 item_tensor = torch.tensor(item_data) #TODO: convert 99s?
-
+print(user_data)
 # split into training (81%), validation(9%) and test sets(10%)   #TODO: repeat 5 times? shuffle? mean/scale/normalize?
 studied_data = combined_data[study]
 N_split = int(0.9 * studied_data.shape[0])
@@ -38,7 +55,7 @@ N_split2 = int(0.9 * x_temp.shape[0])
 x_train = x_temp[:N_split2, :]
 x_val = x_temp[N_split2:, :]
 
-print("train :", x_train.shape)
+print("train :", x_train.shape, type(x_train))
 print("test :", x_test.shape)
 print("validate :", x_val.shape)
 
@@ -52,6 +69,16 @@ print(len(trainset[0]))
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True)
 testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False)
 valloader = torch.utils.data.DataLoader(valset, batch_size=batch_size, shuffle=False)
+
+sparse99 = next(iter(trainloader))
+print('r', len(sparse99), type(sparse99))
+full = torch.ones_like(sparse99)
+print('full', full)
+sparse0 = remove_missing_ratings(full, sparse99, placeholder=99.)
+
+print('full', full)
+print('sparse99', sparse99 )
+print('sparse0', sparse0 )
 
 """
 2. Sanity check  

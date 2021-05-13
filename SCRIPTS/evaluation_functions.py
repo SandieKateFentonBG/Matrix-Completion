@@ -15,5 +15,14 @@ def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
-def autorec_loss(prediction, groundtruth): #TODO: write this
+def autorec_loss(prediction, groundtruth, ): #TODO: write this
+
+    """r_i = 'partially observed tensor'
+    h(r_i, theta) = 'predicted rating'
+    theta = [W, V] = 'weight matrix
+
+    loss = (r-h)^2 + lamda*0.5*(W^2+V^2)
+    '"""
+    return sum(prediction - groundtruth) ^ 2 + 0.5 * regul * (theta[0]) ^ 2 + (theta[1]) ^ 2)
     pass
+    torch.sum((encoder_i - decoder_i) ** 2)

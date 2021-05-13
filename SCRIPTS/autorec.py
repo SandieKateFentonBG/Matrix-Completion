@@ -16,3 +16,4 @@ class Autorec(nn.Module):
         x = F.relu(self.fci(x))
         #x = F.relu(self.fch(x))
         x = self.fco(x) #TODO : identity for last layer / no reLu?
+        return x
