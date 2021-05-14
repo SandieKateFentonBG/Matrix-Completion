@@ -20,7 +20,7 @@ input_path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDa
 """
 1. Parameter initialization and data preparation
 """
-from data_initialization import *
+from s01_data_initialization import *
 
 # Load data
 studied_data = load_data(path = input_path, study)
@@ -35,14 +35,14 @@ print("validate :", x_val.shape)
 """
 2. Sanity check  
 """
-from sanity_check import *
+from s02_sanity_check import *
 
 check1 = sanity_check1(trainloader)#TODO:check later
 
 """
 3. Model definition
 """
-from autorec import * #TODO : if this is a class?
+from s03_model_definition import * #TODO : if this is a class?
 
 model = Autorec(input_dim[study], hidden_dim_count).to(device)
 print(model)
@@ -50,7 +50,7 @@ print(model)
 """
 4. Evaluation functions
 """
-from evaluation_functions import *
+from s04_evaluation_functions import *
 
 print("Number of trainable parameters: {}".format(count_parameters(model))) #TODO: Number of trainable parameters: 7707199???
 #loss_function = autorec_loss() #TODO: loss vs objective?
@@ -59,14 +59,14 @@ loss_function = nn.MSELoss() #TODO: remove
 """
 5. Training Loop
 """
-from training_loop import *
+from s05_running_loss import *
 
 tr_losses, te_losses = training_loop(model,learning_rate, num_epochs, trainloader, testloader)
 
 """
 6. Investigate results
 """
-from plot_results import *
+from s07_plot_results import *
 
 plot_results(tr_losses,te_losses)
 #Check some reconstructions by the trained model #TODO: check this later

@@ -13,10 +13,6 @@ def load_data(path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/
     combined_data = [item_data, user_data]
     return combined_data[study]
 
-def no_rating_indices(studied_data):
-    empty_indices = torch.zeros_like(studied_data)
-    for data in studied_data:
-
 
 def split_data(studied_data):
     # split into training (81%), validation(9%) and test sets(10%)   #TODO: repeat 5 times? shuffle? mean/scale/normalize?

@@ -4,16 +4,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-from evaluation_functions import *
-from autorec import *
+from s04_evaluation_functions import *
+from s03_model_definition import *
 
-def remove_missing_ratings(full_tensor, batch_data, placeholder = 99.0):
-    index = None
-    for data in batch_data:
-        if data == placeholder:
-            index = index(data)
-            full_tensor[index] = 0
-    return full_tensor
+
 
 def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
     # Train model
@@ -87,7 +81,7 @@ def compute_te_loss(testloader, model, device, optimizer, regul):
         for batch_data, _ in testloader:
             batch_data = batch_data.to(device)
             output = model(batch_data)
-            running_loss += autorec_loss(output, batch_data, optimizer, regul).item()
+            running_loss += autorec_loss(output, batch_data, optimizer, regul)
 
     te_loss = running_loss / len(testloader.dataset)
 
@@ -134,13 +128,6 @@ def training_loop(model,learning_rate, num_epochs, trainloader, testloader, devi
     return tr_losses, te_losses
 
 
-def autorec_loss(prediction, groundtruth, optimizer, regul): #TODO: write this
-    loss = 0
-    for i in range(len(groundtruth)):
-        if groundtruth[i] < 99.:
-            loss += (groundtruth[i] - prediction[i]) ** 2
-    V, W = optimizer
-    loss += 0.5 * regul * (torch.linalg.norm(V, p='fro')+torch.linalg.norm(W, p='fro'))
-    return loss
+
 
 
