@@ -12,15 +12,15 @@ def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
     # Train model
     running_loss = 0.0
 
-    for batch_data, _ in dataloader:  # the input image is also the label
+    for batch_data in dataloader:  # the input image is also the label
         # Train model - start with one item - 7700*1 ratings
 
         # Put data on device
         batch_data = batch_data.to(device)
 
         # Predict and get loss
-        pred = model(batch_data) #x/y - instantiation + forward prop > get first prediction +/- accurate -
-        loss = autorec_loss(pred, batch_data, optimizer, regul)  # x/y - get first delta tensor/error matrix
+        pred = model(batch_data).to(device) #x/y - instantiation + forward prop > get first prediction +/- accurate -
+        loss = autorec_loss(pred, batch_data, device, optimizer, regul)  # x/y - get first delta tensor/error matrix
 
         # TODO:
         # pred = 7700*1 / model = nn with V (7700*500) W (500*7700)
@@ -72,15 +72,15 @@ def remove_missing_ratings_2D(full_tensor, batch_data, placeholder = '99.'):
     return full_tensor
 
 
-def compute_te_loss(testloader, model, device, optimizer, regul):
+def compute_te_loss(testloader, model, device, regul):
 
     # Get validation results from testing set
     running_loss = 0
     with torch.no_grad():  # no .backward() needed
-        for batch_data, _ in testloader:
+        for batch_data in testloader:
             batch_data = batch_data.to(device)
             output = model(batch_data)
-            running_loss += autorec_loss(output, batch_data, optimizer, regul)
+            running_loss += autorec_loss(output, batch_data, regul)
 
     te_loss = running_loss / len(testloader.dataset)
 

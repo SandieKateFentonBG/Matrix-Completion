@@ -1,4 +1,4 @@
-def sanity_check1(dataloader)
+def sanity_check1(dataloader):
     # Print some samples of dataset as a sanity check #TODO:check later
     # Get some random training ratings
     dataiter = iter(dataloader)

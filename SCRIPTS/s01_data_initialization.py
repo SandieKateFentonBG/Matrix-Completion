@@ -2,7 +2,7 @@
 import numpy as np
 import torch
 
-def load_data(path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv', study):
+def load_data(path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv', study = 0):
     # Load data
     user_data = np.genfromtxt(path, delimiter=';', dtype='str',
                               usecols=(i for i in range(1, 159)))  # first column removed
@@ -25,9 +25,9 @@ def split_data(studied_data):
     return x_train, x_test, x_val
 
 def construct_tensor(array):
-    return torch.tensor(array)
+    return torch.tensor(array).float()
 
-def create_data_loader(x_train, x_test, x_val):
+def create_data_loader(x_train, x_test, x_val, batch_size):
     # Create dataloaders from tensors #TODO: shuffle?
     trainloader = torch.utils.data.DataLoader(construct_tensor(x_train), batch_size=batch_size, shuffle=True)
     testloader = torch.utils.data.DataLoader(construct_tensor(x_test), batch_size=batch_size, shuffle=False)

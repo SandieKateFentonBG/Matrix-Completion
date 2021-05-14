@@ -24,9 +24,22 @@ input_path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDa
 from s01_data_initialization import *
 
 # Load data
-studied_data = load_data(path = input_path, study)
+studied_data = load_data(input_path, study)
 x_train, x_test, x_val = split_data(studied_data)
-trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val)
+
+trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val, batch_size)
+
+
+
+"""
+print('testloader', len(testloader),  testloader)
+for batch_data in testloader:
+    print("batch_data", len(batch_data), batch_data)
+    for data in batch_data:
+        print("data", len(data), data)
+a = construct_tensor(x_train)
+print('1', a.dtype)        
+"""
 
 # TODO :Questions
 #  1. repeat 5 times? shuffle? mean/scale/normalize?
@@ -105,7 +118,7 @@ from s05_running_loss import *
 
 from s06_training_loop import *
 
-tr_losses, te_losses = training_loop(model,weights, num_epochs, trainloader, testloader)
+tr_losses, te_losses = training_loop(model, weights, num_epochs, trainloader, testloader, device, regularization_term)
 
 # TODO : Questions:
 #  1. only update the weights with observed inputs / although we compute them for everything ?

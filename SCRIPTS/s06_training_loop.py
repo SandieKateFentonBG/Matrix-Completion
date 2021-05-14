@@ -6,7 +6,7 @@ import torch.optim as optim
 
 from s05_running_loss import *
 
-def training_loop(model,weights, num_epochs, trainloader, testloader, device, regul):
+def training_loop(model, weights, num_epochs, trainloader, testloader, device, regul):
 
     best_val_loss = np.inf
 
