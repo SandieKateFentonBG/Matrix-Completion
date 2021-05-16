@@ -68,7 +68,7 @@ from s03_model_definition import *
 
 # Instantiate model and optimizer
 model = Autorec(input_dim[study], hidden_dim_count).to(device)
-weights = torch.optim.Rprop(model.parameters(), learning_rate)
+optimizer = torch.optim.Rprop(model.parameters(), learning_rate)
 """
 optimizer/weights
     params (iterable): iterable of parameters to optimize or dicts defining
@@ -118,7 +118,7 @@ from s05_running_loss import *
 
 from s06_training_loop import *
 
-tr_losses, te_losses = training_loop(model, weights, num_epochs, trainloader, testloader, device, regularization_term)
+tr_losses, te_losses = training_loop(model, optimizer, num_epochs, trainloader, testloader, device, regularization_term)
 
 # TODO : Questions:
 #  1. only update the weights with observed inputs / although we compute them for everything ?

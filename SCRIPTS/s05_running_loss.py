@@ -20,9 +20,9 @@ def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
 
         # Predict and get loss
         pred = model(batch_data).to(device) #x/y - instantiation + forward prop > get first prediction +/- accurate -
-        loss = autorec_loss(pred, batch_data, device, optimizer, regul)  # x/y - get first delta tensor/error matrix
+        loss = autorec_loss(pred, batch_data, device, model, regul)  # x/y - get first delta tensor/error matrix
 
-        # TODO:
+        # TODO: change device
         # pred = 7700*1 / model = nn with V (7700*500) W (500*7700)
         # pred = ? scalar loss corresponding to current weights for this item
         #  but optimizer only appears after..?
@@ -31,14 +31,17 @@ def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
         optimizer.zero_grad()  # thetas a/b/c - fill weights with zeros at start; optimizer = torch.optim.Rprop
         loss.backward()  #x/hidden/y - computes the gradients in a chain rule #TODO: isn't loss a scalar? should I have another loss of dim 7700*1?
 
-        # Sparsen model
+        """# Sparsen model
         V, W = optimizer # TODO : compute all weights / only update for observed inputs ?
         Vsparse = remove_missing_ratings_2D(V, batch_data, placeholder='99.')
         Wsparse = remove_missing_ratings_2D(W, batch_data, placeholder='99.') #TODO : check dim of W = 500*7700 or 7700*500?
         sparse_optimzer = Vsparse, Wsparse
         optimizer = sparse_optimzer # TODO : check that this is a "deepcopy" > sparsity is saved into optimizer weights
-
-        optimizer.step()  # thetas a/b/c updates all the weight from the bp #TODO : before or after the sparsening?
+"""
+        optimizer.step()  #TODO: is this only done for the indices that paticipated in the loss computation
+        #here drop-out structure could be interesting as a reference - works only with certain elements
+        #https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html
+        # thetas a/b/c updates all the weight from the bp #TODO : before or after the sparsening?
 
         running_loss += loss.item()
 

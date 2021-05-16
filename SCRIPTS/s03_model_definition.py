@@ -8,10 +8,11 @@ import torch.optim as optim
 class Autorec(nn.Module):
     def __init__(self, input_features, hidden_dim):
         super().__init__()
-        #self.flatten = nn.Flatten() #TODO : is this needed?
-        self.fci = nn.Linear(input_features, hidden_dim)
+         #TODO : bias = True - see how to deal with this in s04 evaluation function - autorec loss
+        #        # here you could add Vbias, Wbias through a reshape = model.fci.bias, model.fco.bias
+        self.fci = nn.Linear(input_features, hidden_dim, bias = False) #TODO: here bias change
         #self.fch = nn.Linear(hidden_dim, hidden_dim) #needed?
-        self.fco = nn.Linear(hidden_dim, input_features)
+        self.fco = nn.Linear(hidden_dim, input_features, bias = False) #TODO: here bias change
 
     def forward(self, x):
         #x = self.flatten(x) #TODO : is this needed?
