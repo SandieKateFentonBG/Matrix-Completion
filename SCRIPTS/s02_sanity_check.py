@@ -10,6 +10,6 @@ def sanity_check2(testloader):
 
     # Get some random validation rating
     dataiter = iter(testloader)
-    example_rating, _ = dataiter.next()
-
+    example_rating = dataiter.next()
     print(example_rating.shape)
+    return example_rating

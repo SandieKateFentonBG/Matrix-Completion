@@ -20,12 +20,7 @@ def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
 
         # Predict and get loss
         pred = model(batch_data).to(device) #x/y - instantiation + forward prop > get first prediction +/- accurate -
-        loss = autorec_loss(pred, batch_data, device, model, regul)  # x/y - get first delta tensor/error matrix
-
-        # TODO: change device
-        # pred = 7700*1 / model = nn with V (7700*500) W (500*7700)
-        # pred = ? scalar loss corresponding to current weights for this item
-        #  but optimizer only appears after..?
+        loss = autorec_loss(pred, batch_data, model, regul)  # x/y - get first delta tensor/error matrix
 
         # Update model
         optimizer.zero_grad()  # thetas a/b/c - fill weights with zeros at start; optimizer = torch.optim.Rprop
@@ -37,7 +32,7 @@ def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
         Wsparse = remove_missing_ratings_2D(W, batch_data, placeholder='99.') #TODO : check dim of W = 500*7700 or 7700*500?
         sparse_optimzer = Vsparse, Wsparse
         optimizer = sparse_optimzer # TODO : check that this is a "deepcopy" > sparsity is saved into optimizer weights
-"""
+        """
         optimizer.step()  #TODO: is this only done for the indices that paticipated in the loss computation
         #here drop-out structure could be interesting as a reference - works only with certain elements
         #https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html
@@ -56,7 +51,21 @@ def compute_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
         # Note that following the first .backward call, a second call is only possible
         # after you have performed another forward pass, unless you specify retain_graph=True
 
-def remove_missing_ratings_1D(full_tensor, batch_data, placeholder = '99.'):
+def compute_te_loss(testloader, model, device, regul):
+
+    # Get validation results from testing set
+    running_loss = 0
+    with torch.no_grad():  # no .backward() needed
+        for batch_data in testloader:
+            batch_data = batch_data.to(device)
+            output = model(batch_data)
+            running_loss += autorec_loss(output, batch_data, model, regul)
+
+    te_loss = running_loss / len(testloader.dataset)
+
+    return te_loss
+
+def xremove_missing_ratings_1D(full_tensor, batch_data, placeholder = '99.'):
 
     indices = [] # TODO : check
     for data in batch_data:
@@ -65,7 +74,7 @@ def remove_missing_ratings_1D(full_tensor, batch_data, placeholder = '99.'):
         full_tensor[i] = 0
     return full_tensor
 
-def remove_missing_ratings_2D(full_tensor, batch_data, placeholder = '99.'):
+def xremove_missing_ratings_2D(full_tensor, batch_data, placeholder = '99.'):
 
     missing_indices = [] # TODO : check
     for data in batch_data:
@@ -75,19 +84,7 @@ def remove_missing_ratings_2D(full_tensor, batch_data, placeholder = '99.'):
     return full_tensor
 
 
-def compute_te_loss(testloader, model, device, regul):
 
-    # Get validation results from testing set
-    running_loss = 0
-    with torch.no_grad():  # no .backward() needed
-        for batch_data in testloader:
-            batch_data = batch_data.to(device)
-            output = model(batch_data)
-            running_loss += autorec_loss(output, batch_data, regul)
-
-    te_loss = running_loss / len(testloader.dataset)
-
-    return te_loss
 
 
 

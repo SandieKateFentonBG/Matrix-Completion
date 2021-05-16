@@ -10,6 +10,8 @@ import torch.optim as optim
 
 study = 0 # 0=item_data, 1=user_data
 batch_size = 8
+group_split = 5
+tested_section = 0
 input_dim = [7699,158] # ratings_per_item, ratings_per_user
 hidden_dim_count = 500 #{10, 20, 40, 80, 100, 200, 300, 400, 500}
 num_epochs = 5 # cfr repeat process 5 times
@@ -24,26 +26,18 @@ input_path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDa
 from s01_data_initialization import *
 
 # Load data
-studied_data = load_data(input_path, study)
-x_train, x_test, x_val = split_data(studied_data)
+user_data = load_data(input_path)
+sections = split_data(group_split, user_data)
+test_section = sections[tested_section]
+studied_data = selected_data(test_section, study = study)
+
+x_train, x_test, x_val = split_train_test_validate_data(studied_data)
 
 trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val, batch_size)
 
-
-
-"""
-print('testloader', len(testloader),  testloader)
-for batch_data in testloader:
-    print("batch_data", len(batch_data), batch_data)
-    for data in batch_data:
-        print("data", len(data), data)
-a = construct_tensor(x_train)
-print('1', a.dtype)        
-"""
-
 # TODO :Questions
 #  1. repeat 5 times? shuffle? mean/scale/normalize?
-#  2. at what stage should we do dataloader vs full data > batch size dim?
+#  2. dataloader = manager or location?
 
 # Print data
 print("train :", x_train.shape)
@@ -67,30 +61,17 @@ check1 = sanity_check1(trainloader)
 from s03_model_definition import *
 
 # Instantiate model and optimizer
-model = Autorec(input_dim[study], hidden_dim_count).to(device)
+size = x_train.shape[1]
+model = Autorec(size, hidden_dim_count).to(device)
 optimizer = torch.optim.Rprop(model.parameters(), learning_rate)
-"""
-optimizer/weights
-    params (iterable): iterable of parameters to optimize or dicts defining
-        parameter groups
-    lr (float, optional): learning rate (default: 1e-2)
-    etas (Tuple[float, float], optional): pair of (etaminus, etaplis), that #TODO:                  
-        are multiplicative increase and decrease factors
-        (default: (0.5, 1.2))
-    step_sizes (Tuple[float, float], optional): a pair of minimal and
-        maximal allowed step sizes (default: (1e-6, 50))
-#'Rprop does not support sparse gradients'
-#https://pytorch.org/docs/master/_modules/torch/optim/rprop.html#Rprop
-"""
 
 # Print output
 print('model', model)
 
 # TODO :Questions
-#  1. wat difference if model is a class?
+#  1. Bias?
 #  2. model - identify for last layer / no reLu?
-#  3. optimizer vs weights?
-#  4. default weights ? What is this etas?
+#  3. 'Rprop does not support sparse gradients'  https://pytorch.org/docs/master/_modules/torch/optim/rprop.html#Rprop
 
 """
 4. Evaluation functions
@@ -101,16 +82,18 @@ from s04_evaluation_functions import *
 print("Number of trainable parameters: {}".format(count_parameters(model)))
 
 # TODO :Questions
-#  1.Number of trainable parameters: 7707199???
-#  2.loss vs objective? check autorec_loss content
+#  1. custom loss does not have to inherit from module/class loss?
+#  2. loss computed from sparse tensor > sparsity transmited to backprop/
+#  only non-sparse indices undergo the gradient update?
+#  3. weight/bias > both used for regularization?
 
 """
-5. Training Loop
+5. Running loss
 """
 from s05_running_loss import *
 
 # TODO : Questions:
-#  1. sparsity ?
+#  1. sparsity in the training?
 
 """
 6. Training Loop
@@ -130,18 +113,25 @@ from s07_plot_results import *
 
 plot_results(tr_losses,te_losses)
 #Check some reconstructions by the trained model
-check2 = sanity_check2(testloader)
+example_rating = sanity_check2(testloader)
 
 #TODO: check this later
 
 # Show images
 preds = model(example_rating.to(device))
-print(' '.join('%5s' % example_ratings[j].item() for j in range(batch_size)))
+print(' '.join('%5s' % example_rating[j] for j in range(batch_size)))
 # Print labels
-print(' '.join('%5s' % example_labels[j].item() for j in range(batch_size)))
+print(' '.join('%5s' % preds[j] for j in range(batch_size)))
 
 """
-7. Parameter hypertuning - with validation set
+7. Save results
 """
+
+#TODO: export graphs/results
+
+"""
+8. Parameter hypertuning - with validation set
+"""
+
 # tune params with with validation set
 # test deep AE

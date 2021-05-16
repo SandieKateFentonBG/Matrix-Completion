@@ -10,11 +10,13 @@ class Autorec(nn.Module):
         super().__init__()
          #TODO : bias = True - see how to deal with this in s04 evaluation function - autorec loss
         #        # here you could add Vbias, Wbias through a reshape = model.fci.bias, model.fco.bias
-        self.hidden = nn.Linear(input_features, hidden_dim)
-        self.predict = nn.Linear(hidden_dim, input_features)
+        self.fci = nn.Linear(input_features, hidden_dim, bias = False) #TODO: here bias change
+        #self.fch = nn.Linear(hidden_dim, hidden_dim) #needed?
+        self.fco = nn.Linear(hidden_dim, input_features, bias = False) #TODO: here bias change
 
     def forward(self, x):
-        temp = self.hidden(x)
+        temp = self.fci(x)
         x = F.relu(temp)
-        x = self.predict(x) #TODO : identity for last layer / no reLu?
+        #x = F.relu(self.fch(x))
+        x = self.fco(x) #TODO : identity for last layer / no reLu?
         return x
