@@ -11,7 +11,6 @@ def load_data(path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/
 
 def split_data(count, user_data, split = 0):
 
-    print(len(user_data))
     N_split = int((1/count) * user_data.shape[split])
     list = [N_split]
     for i in range(1, count-1):
@@ -20,7 +19,7 @@ def split_data(count, user_data, split = 0):
 
     return torch.utils.data.random_split(user_data, list)
 
-def selected_data(user_data, study = 0) :
+def selected_data(user_data, study) :
     item_data = np.transpose(user_data)
     combined_data = [item_data, user_data]
     return combined_data[study]
@@ -44,3 +43,37 @@ def create_data_loader(x_train, x_test, x_val, batch_size):
     testloader = torch.utils.data.DataLoader(construct_tensor(x_test), batch_size=batch_size, shuffle=False)
     valloader = torch.utils.data.DataLoader(construct_tensor(x_val), batch_size=batch_size, shuffle=False)
     return trainloader, testloader, valloader
+
+def data_initialization_print(x_train, x_test, x_val, folder=None, new_folder=False ):
+    from s09_helper_functions import mkdir_p
+    # Print data
+    print("train :", x_train.shape)
+    print("test :", x_test.shape)
+    print("validate :", x_val.shape)
+
+    # Export data
+    if new_folder:
+        # Create new directory
+        output_dir = folder
+        mkdir_p(output_dir)
+    if folder :
+        with open(folder + "results.txt", 'a') as f:
+            print('2. Data initialization', file=f)
+            print("  train :", x_train.shape, file=f)
+            print("  test :", x_test.shape, file=f)
+            print("  validate :", x_val.shape, file=f)
+        f.close()
+
+def sanity_check(dataloader, new_folder=False, folder = None):
+    # Get random training ratings
+    dataiter = iter(dataloader)
+    example_ratings = dataiter.next()
+    print('example_ratings : ', example_ratings)
+    if new_folder:
+        from s09_helper_functions import mkdir_p
+        mkdir_p(folder)
+    if folder :
+        with open(folder + "results.txt", 'a') as f:
+            print('example_ratings : ', example_ratings, file=f)
+        f.close()
+    return example_ratings

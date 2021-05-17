@@ -20,7 +20,7 @@ input_path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDa
 """
 1. Parameter initialization and data preparation
 """
-from s01_data_initialization import *
+from s02_data_initialization import *
 
 # Load data
 studied_data = load_data(path = input_path, study)

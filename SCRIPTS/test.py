@@ -27,3 +27,12 @@ def printer():
                 print(count, k, start)
 
         print('loss', loss)
+
+
+
+a = torch.Tensor([True, False, False, False, False, False])
+b = torch.Tensor([1, 2, 3, 4.5, 2.3, 1])
+c = a*b
+print(a, a.shape)
+print(b, b.shape)
+print(c, c.shape)

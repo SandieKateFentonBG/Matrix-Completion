@@ -18,3 +18,17 @@ class Autorec(nn.Module):
         x = F.relu(temp)
         x = self.predict(x) #TODO : identity for last layer / no reLu?
         return x
+
+def model_definition_print(model, optimizer, folder=False, new_folder=False):
+    print('3. Model definition')
+    print('model', model)
+    print('optimizer', optimizer)
+    if new_folder:
+        from s09_helper_functions import mkdir_p
+        mkdir_p(folder)
+    if folder :
+        with open(folder + "results.txt", 'a') as f:
+            print('3. Model definition', file=f)
+            print('model', model, file=f)
+            print('optimizer', optimizer, file=f)
+        f.close()
