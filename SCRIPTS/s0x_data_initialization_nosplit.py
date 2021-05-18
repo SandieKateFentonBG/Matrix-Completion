@@ -9,7 +9,7 @@ def load_data(path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/
     user_data = np.char.replace(user_data, ',', '.').astype(float)
     item_data = np.transpose(user_data)
     user_tensor = torch.tensor(user_data)
-    item_tensor = torch.tensor(item_data)  # TODO: convert 99s?
+    item_tensor = torch.tensor(item_data)
     combined_data = [item_data, user_data]
     return combined_data[study]
 
@@ -40,8 +40,8 @@ def construct_tensor(array):
     return torch.tensor(array).float()
 
 def create_data_loader(x_train, x_test, x_val, batch_size):
-    # Create dataloaders from tensors #TODO: shuffle?
-    trainloader = torch.utils.data.DataLoader(construct_tensor(x_train), batch_size=batch_size, shuffle=True)
+    # Create dataloaders from tensors
+    trainloader = torch.utils.data.DataLoader(construct_tensor(x_train), batch_size=batch_size, shuffle=True) #TODO : shuffle = true > my results differ every time?
     testloader = torch.utils.data.DataLoader(construct_tensor(x_test), batch_size=batch_size, shuffle=False)
     valloader = torch.utils.data.DataLoader(construct_tensor(x_val), batch_size=batch_size, shuffle=False)
     return trainloader, testloader, valloader

@@ -38,18 +38,20 @@ def construct_tensor(array):
     return torch.tensor(array).float()
 
 def create_data_loader(x_train, x_test, x_val, batch_size):
-    # Create dataloaders from tensors #TODO: shuffle?
-    trainloader = torch.utils.data.DataLoader(construct_tensor(x_train), batch_size=batch_size, shuffle=True)
+    # Create dataloaders from tensors
+    trainloader = torch.utils.data.DataLoader(construct_tensor(x_train), batch_size=batch_size, shuffle=True) #TODO : shuffle = true > my results differ every time?
     testloader = torch.utils.data.DataLoader(construct_tensor(x_test), batch_size=batch_size, shuffle=False)
     valloader = torch.utils.data.DataLoader(construct_tensor(x_val), batch_size=batch_size, shuffle=False)
     return trainloader, testloader, valloader
 
-def data_initialization_print(x_train, x_test, x_val, folder=None, new_folder=False ):
-    from s09_helper_functions import mkdir_p
+def data_initialization_print(x_train, x_test, x_val, folder=None, new_folder=False, VISU = False, reference = None ):
+    from s10_helper_functions import mkdir_p
     # Print data
-    print("train :", x_train.shape)
-    print("test :", x_test.shape)
-    print("validate :", x_val.shape)
+    if VISU :
+        print('2. Data initialization')
+        print("train :", x_train.shape)
+        print("test :", x_test.shape)
+        print("validate :", x_val.shape)
 
     # Export data
     if new_folder:
@@ -57,7 +59,7 @@ def data_initialization_print(x_train, x_test, x_val, folder=None, new_folder=Fa
         output_dir = folder
         mkdir_p(output_dir)
     if folder :
-        with open(folder + "results.txt", 'a') as f:
+        with open(folder + reference + ".txt", 'a') as f:
             print('2. Data initialization', file=f)
             print("  train :", x_train.shape, file=f)
             print("  test :", x_test.shape, file=f)
@@ -68,9 +70,8 @@ def sanity_check(dataloader, new_folder=False, folder = None):
     # Get random training ratings
     dataiter = iter(dataloader)
     example_ratings = dataiter.next()
-    print('example_ratings : ', example_ratings)
     if new_folder:
-        from s09_helper_functions import mkdir_p
+        from s10_helper_functions import mkdir_p
         mkdir_p(folder)
     if folder :
         with open(folder + "results.txt", 'a') as f:

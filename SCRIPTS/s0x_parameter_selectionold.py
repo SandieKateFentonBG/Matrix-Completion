@@ -69,7 +69,7 @@ def input_study_display(date, test_count, project, database, folder=False, new_f
     """
 
     if new_folder:
-        from s09_helper_functions import mkdir_p
+        from s10_helper_functions import mkdir_p
         # Create new directory
         mkdir_p(output_path)
     if folder :

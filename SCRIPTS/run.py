@@ -66,7 +66,7 @@ tr_losses, te_losses = training_loop(model,learning_rate, num_epochs, trainloade
 """
 6. Investigate results
 """
-from s07_plot_results import *
+from s07_investigate_results import *
 
 plot_results(tr_losses,te_losses)
 #Check some reconstructions by the trained model #TODO: check this later

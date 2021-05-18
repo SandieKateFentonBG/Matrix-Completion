@@ -42,12 +42,13 @@ def studied_attribute(mystudy, attr, val):
     mystudy.__setitem__(attr, val)
     return attr, val
 
-def input_study_display(mystudy, date, studied_attribute, studied_val, project, database, folder=False, new_folder=False):
+def input_study_display(mystudy, date, studied_attribute, studied_val, project, database, folder=None,
+                        new_folder=False, VISU = False):
     """
     1. File referencing
     """
     # Default
-    reference = date + '_results_for_' + str(studied_attribute) + ' : ' + str(studied_val)
+    reference = date + '_results_for_' + str(studied_attribute) + '_' + str(studied_val)
     input_path = "C:/Users/sfenton/Code/Repositories/" + project + '/DATA/' + database
     output_path = 'C:/Users/sfenton/Code/Repositories/' + project + '/RESULTS/' + date + '_results/'
 
@@ -57,30 +58,31 @@ def input_study_display(mystudy, date, studied_attribute, studied_val, project, 
     """
     3. Prints
     """
-    print('0. Paths')
-    print('reference : ', reference)
-    print('input_path : ', input_path)
-    print('output_path : ', output_path)
-    print('1. Parameter selection')
-    for k,v in mystudy.__dict__.items():
-        print(k, ' : ', v )
+    if VISU :
+        print('0. Paths')
+        print(' reference : ', reference)
+        print(' input_path : ', input_path)
+        print(' output_path : ', output_path)
+        print('1. Parameter selection')
+        for k,v in mystudy.__dict__.items():
+            print(' ', k, ' : ', v )
 
     """
     4. Exports
     """
     if new_folder:
-        from s09_helper_functions import mkdir_p
+        from s10_helper_functions import mkdir_p
         # Create new directory
         mkdir_p(output_path)
     if folder :
-        with open(output_path + "results.txt", 'a') as f:
+        with open(output_path + reference + ".txt", 'a') as f:
             print('0. Paths', file=f)
-            print('reference : ', reference, file=f)
-            print('input_path : ', input_path, file=f)
-            print('output_path : ', output_path, file=f)
+            print(' reference : ', reference, file=f)
+            print(' input_path : ', input_path, file=f)
+            print(' output_path : ', output_path, file=f)
             print('1. Parameter selection', file=f)
             for k, v in mystudy.__dict__.items():
-                print(k, ' : ', v, file=f)
+                print(' ', k, ' : ', v, file=f)
         f.close()
 
     return reference, input_path, output_path
