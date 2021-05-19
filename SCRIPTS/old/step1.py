@@ -23,7 +23,7 @@ regularization_term = 0.5
 1. Parameter initialization and data preparation
 """
 # Load data
-path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv'
+path = '/DATA/JesterDataset4/JesterDataset4.csv'
 user_data = np.genfromtxt(path, delimiter=';', dtype='str', usecols = (i for i in range(1,159))) #first column removed
 
 user_data = np.char.replace(user_data, ',', '.').astype(float)

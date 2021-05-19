@@ -42,14 +42,14 @@ def studied_attribute(mystudy, attr, val):
     mystudy.__setitem__(attr, val)
     return attr, val
 
-def input_study_display(mystudy, date, studied_attribute, studied_val, project, database, folder=None,
+def input_study_display(mystudy, date, project, database, studied_attribute ='Default', studied_val = 'Default', folder=None,
                         new_folder=False, VISU = False):
     """
     1. File referencing
     """
     # Default
     reference = date + '_results_for_' + str(studied_attribute) + '_' + str(studied_val)
-    input_path = "C:/Users/sfenton/Code/Repositories/" + project + '/DATA/' + database
+    input_path = "C:/Users/sfenton/Code/Repositories/" + str(project) + '/DATA/' + str(database)
     output_path = 'C:/Users/sfenton/Code/Repositories/' + project + '/RESULTS/' + date + '_results/'
 
     variables = mystudy.__dict__.keys()

@@ -9,7 +9,7 @@ import csv
 import io
 
 import pandas as pd
-path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv'
+path = '/DATA/JesterDataset4/JesterDataset4.csv'
 
 #with open (path, "r") as myfile:
 #       data=myfile.read().replace('"', '')

@@ -43,7 +43,6 @@ data_initialization_print(x_train, x_test, x_val, folder = output_path)
 
 # TODO :Questions
 #  1. repeat 5 times - for each group? shuffle? mean/scale/normalize?
-#  2. dataloader = manager (not location)?
 
 """
 3. Model definition

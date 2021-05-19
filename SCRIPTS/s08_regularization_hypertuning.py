@@ -1,95 +1,99 @@
 
-from s10_I_autorec_model import *
-
-# TODO : all this should be done for all 5 groups > then what?
-
-def hypertune_model_parameters_regularization(model, reg_list):
-    # TODO : regularization strength only influences the loss value > should not be hypertuned on a fix weight matrix but should be used to optimize weights
-    [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, val_losses,
-     perc_acc] = model
-
-    loss_list = []
-    for val in reg_list:
-        computed_loss = compute_te_loss(valloader, model, mystudy.device, val)
-        loss_list.append(computed_loss)
-
-    perc_acc = compute_perc_acc(valloader, mystudy.device, model) #TODO : REMOVE : should be the same for all
-
-    return reg_list, loss_list, perc_acc #TODO : RMSE instead of loss; percentage acc instead of loss
+from s09_I_autorec_model import *
 
 
-def hypertune_model_architecture_hidden(project, database, date, selected_group, hidden_dim_list, num_epochs, learning_rate, regularization_term,
-                    studied_attr, VISU = False, new_folder=False, folder = None, reference = None):
+def tune_model_architecture_hidden(project, database, date, selected_group, hidden_dim_list, num_epochs, learning_rate, regularization_term,
+                                   studied_attr, VISU = False, new_folder=False, folder = None, reference = None):
 
-    AE_list = [] #TODO : how can this process be done with validationset and not train set?
+    #TODO : how can this process be done with validationset and not train set? should be trained on training, and tested on validation !!
 
-    for hidden_dim in hidden_dim_list
+    AE_list = []
+
+    for hidden_dim in hidden_dim_list:
         myAE = I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epochs, learning_rate, regularization_term,
-                    studied_attr, VISU = False, new_folder=False, folder = None, reference = None)
+                    studied_attr, VISU = VISU, new_folder=new_folder, folder = folder, reference = reference)
         AE_list.append(myAE)
 
-    """
-    [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, val_losses,
-     perc_acc] = model
-    """"
+        """
+        [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, rmse_loss, 
+        best-val_losses, perc_acc] = model
+        """
 
-    loss_list = []
+    autorec_loss_list = []
     perc_acc_list = []
+    rmse_loss_list = []
+    best_val_loss_list = []
     for AE in AE_list:
-        loss_list.append(AE[9])
-        perc_acc_list.append(AE[11])
+        autorec_loss_list.append(AE[9])
+        rmse_loss_list.append(AE[10])
+        best_val_loss_list.append(AE[11])
+        perc_acc_list.append(AE[12])
 
-    return AE_list, hidden_dim_list, loss_list, perc_acc_list  # TODO : RMSE instead of loss; percentage acc instead of loss
+    return AE_list, hidden_dim_list, autorec_loss_list, perc_acc_list, rmse_loss_list, best_val_loss_list
 
 def tune_model_architecture_groups(project, database, date, selected_group_list, hidden_dim, num_epochs,
                                         learning_rate, regularization_term,
                                         studied_attr, VISU=False, new_folder=False, folder=None, reference=None):
-    AE_list = []  # TODO : how can this process be done with validationset and not train set?
 
-    for selected_group in selected_group_list
+    #TODO : how can this process be done with validationset and not train set? should be trained on training, and tested on validation !!
+
+    AE_list = []
+
+    for selected_group in selected_group_list:
         myAE = I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epochs, learning_rate,
                                regularization_term,
-                               studied_attr, VISU=False, new_folder=False, folder=None, reference=None)
+                               studied_attr, VISU=VISU, new_folder=new_folder, folder=folder, reference=reference )
         AE_list.append(myAE)
 
-    """
-    [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, val_losses,
-     perc_acc] = model
-    """"
+        """
+        [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, rmse_losses, best-val_losses,
+         perc_acc] = model
+        """
 
-    loss_list = []
+    autorec_loss_list = []
     perc_acc_list = []
+    rmse_loss_list = []
+    best_val_loss_list = []
     for AE in AE_list:
-        loss_list.append(AE[9])
-        perc_acc_list.append(AE[11])
+        autorec_loss_list.append(AE[9])
+        rmse_loss_list.append(AE[10])
+        best_val_loss_list.append(AE[11])
+        perc_acc_list.append(AE[12])
 
-    return AE_list, selected_group_list, loss_list, perc_acc_list  # TODO : RMSE instead of loss; percentage acc instead of loss
+    return AE_list, selected_group_list, autorec_loss_list, perc_acc_list, rmse_loss_list, best_val_loss_list
 
 def hypertune_model_architecture_regul(project, database, date, selected_group, hidden_dim, num_epochs,
                                         learning_rate, regularization_term_list,
                                         studied_attr, VISU=False, new_folder=False, folder=None, reference=None):
-    AE_list = []  # TODO : how can this process be done with validationset and not train set?
+    #TODO : how can this process be done with validationset and not train set? should be trained on training, and tested on validation !!
 
-    for regularization_term in regularization_term_list
+    AE_list = []
+
+    for regularization_term in regularization_term_list:
         myAE = I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epochs, learning_rate,
                                regularization_term,
-                               studied_attr, VISU=False, new_folder=False, folder=None, reference=None)
+                               studied_attr, VISU=VISU, new_folder=new_folder, folder=folder, reference=reference)
         AE_list.append(myAE)
 
-    """
-    [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, val_losses,
-     perc_acc] = model
-    """"
+        """
+        [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, rmse_losses, best-val_losses,
+         perc_acc] = model
+        """
 
-    loss_list = []
+    autorec_loss_list = []
     perc_acc_list = []
+    rmse_loss_list = []
+    best_val_loss_list = []
     for AE in AE_list:
-        loss_list.append(AE[9])
-        perc_acc_list.append(AE[11])
+        autorec_loss_list.append(AE[9])
+        rmse_loss_list.append(AE[10])
+        best_val_loss_list.append(AE[11])
+        perc_acc_list.append(AE[12])
 
-    return AE_list, regularization_term_list, loss_list, perc_acc_list  # TODO : RMSE instead of loss; percentage acc instead of loss
+    return AE_list, regularization_term_list, autorec_loss_list, perc_acc_list, rmse_loss_list, best_val_loss_list
 
-def plot_x_y_graph(x_list, y_list, x_label, y_label title=None, folder=None, VISU=False):
+def plot_x_y_graph(x_list, y_list, x_label, y_label, title=None, folder=None, VISU=False):
+
     import matplotlib.pyplot as plt
 
     plt.figure()

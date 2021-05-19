@@ -5,15 +5,15 @@ from s06_training_loop import *
 from s07_investigate_results import *
 
 def I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epochs, learning_rate, regularization_term,
-                    studied_attr, VISU = False, new_folder=False, folder = None, reference = None):
+                    studied_attr = None, val = 'Default', VISU = False, new_folder=False, folder = None, reference = None):
 
     # PARAM SELECTION
     mystudy = case_study(selected_group=selected_group, hidden_dim=hidden_dim, num_epochs=num_epochs,
                          learning_rate=learning_rate, regularization_term=regularization_term)
-
-    val = mystudy.__getattribute__(studied_attr)
-    ref, input_path, output_path = input_study_display(mystudy, date, studied_attr, val, project, database,
-                                                             folder = folder, new_folder=new_folder, VISU = VISU)
+    if studied_attribute:
+        val = mystudy.__getattribute__(studied_attr)
+    ref, input_path, output_path = input_study_display(mystudy, date, project, database, studied_attr, val,
+                                                       folder = folder, new_folder=new_folder, VISU = VISU)
 
     if folder :
         folder = output_path
@@ -36,7 +36,7 @@ def I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epo
     evaluation_function_print(model, loss_function='custom autorec loss', folder=folder, VISU = VISU, reference = reference)
 
     #TRAIN MODEL
-    tr_losses, te_losses, val_losses = training_loop(model, optimizer, mystudy.num_epochs, trainloader, testloader,
+    tr_losses, te_losses, rmse_losses, best_val_loss = training_loop(model, optimizer, mystudy.num_epochs, trainloader, testloader,
                                                      mystudy.device, mystudy.regularization_term, folder=folder,
                                                      VISU = VISU, reference = reference)
 
@@ -44,4 +44,4 @@ def I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epo
     perc_acc = compute_perc_acc(testloader, mystudy.device, model, round=False, folder=folder, VISU = VISU, reference = reference)
     plot_results(tr_losses, te_losses, reference, folder, VISU = VISU)
 
-    return [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, val_losses, perc_acc]
+    return [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, rmse_losses, best_val_loss, perc_acc]

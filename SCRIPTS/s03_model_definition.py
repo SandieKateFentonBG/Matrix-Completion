@@ -6,7 +6,8 @@ class Autorec(nn.Module):
     def __init__(self, input_features, hidden_dim):
         super().__init__()
          #TODO : bias = True - see how to deal with this in s04 evaluation function - autorec loss
-        #        # could add Vbias, Wbias through a reshape = model.fci.bias, model.fco.bias
+        #TODO : nn.sparse - should this be said?
+        #        
         self.hidden = nn.Linear(input_features, hidden_dim)
         self.predict = nn.Linear(hidden_dim, input_features)
 

@@ -16,7 +16,7 @@ num_epochs = 5 # cfr repeat process 5 times
 learning_rate = 0.001 #{0.001, 0.01, 0.1, 1, 100, 1000}
 device = 'cuda:0'
 regularization_term = 0.5
-input_path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv'
+input_path = '/DATA/JesterDataset4/JesterDataset4.csv'
 """
 1. Parameter initialization and data preparation
 """

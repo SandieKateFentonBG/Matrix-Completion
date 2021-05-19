@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv'
+path = '/DATA/JesterDataset4/JesterDataset4.csv'
 
 def open_csv_at_given_line(filename, first_line=0, delimiter=';'):
     import csv
@@ -12,7 +12,7 @@ def open_csv_at_given_line(filename, first_line=0, delimiter=';'):
     header = reader.__next__()
     return header, reader
 
-path = 'C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv'
+path = '/DATA/JesterDataset4/JesterDataset4.csv'
 
 def quantitative_str_feature_to_float(string):
     """

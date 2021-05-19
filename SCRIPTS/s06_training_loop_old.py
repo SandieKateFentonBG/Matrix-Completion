@@ -7,8 +7,7 @@ def training_loop(model, optimizer, num_epochs, trainloader, testloader, device,
     best_val_loss = np.inf
     tr_losses = np.zeros(num_epochs)
     te_losses = np.zeros(num_epochs)
-    rmse_losses = np.zeros(num_epochs)
-
+    
     for epoch_nr in range(num_epochs):
         # Train model
         tr_loss = autorec_tr_loss(trainloader, optimizer, model, device, regul)
@@ -16,10 +15,9 @@ def training_loop(model, optimizer, num_epochs, trainloader, testloader, device,
         # Get validation results
         tr_losses[epoch_nr] = tr_loss
         te_losses[epoch_nr] = te_loss
-        rmse_losses[epoch_nr] = rmse_loss
         # Save model if best accuracy on validation dataset until now
-        if rmse_loss > best_val_loss:
-            best_val_loss = rmse_loss #TODO : check this
+        if te_loss > best_val_loss:
+            best_val_loss = te_loss
             torch.save(model.state_dict(), './cifar_net.pth')
 
         if folder:
@@ -41,6 +39,6 @@ def training_loop(model, optimizer, num_epochs, trainloader, testloader, device,
                 print('>> SAVE: Epoch {} | Model saved'.format(epoch_nr))
     if VISU:
         print('Training finished')
-    return tr_losses, te_losses, rmse_losses, best_val_loss
+    return tr_losses, te_losses, best_val_loss #add best val loss?
 
 
