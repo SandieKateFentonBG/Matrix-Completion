@@ -31,6 +31,13 @@ default_AE = I_Autorec_model(project = project, database = database, date = date
 # myAE = [mystudy = 0, x_train = 1, x_test = 2, x_val = 3, trainloader = 4, testloader = 5, valloader = 6, model = 7,
 # tr_losses = 8, te_losses = 9, rmse_losses = 10, best_val_loss = 11, perc_acc = 12]
 
+#TODO :
+# 0. convert exports to dictionaries
+# 1. create function range over 5 groups - return averages/ best val
+# 2. create supfunction that optimizes varies both params/ can take an optimizes/ returns matrix of results/ best set of results
+# 3. export results
+# 4. clean and renumber
+
 
 #AE on all groups
 AE_list, selected_group_list, autorec_loss_list, perc_acc_list, rmse_loss_list, best_val_loss_list\

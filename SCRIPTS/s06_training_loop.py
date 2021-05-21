@@ -4,7 +4,7 @@ from s05_running_loss import *
 def training_loop(model, optimizer, num_epochs, trainloader, testloader, device, regul, folder = None, VISU = True,
                   reference = None):
 
-    best_val_loss = np.inf
+    best_val_loss = np.inf #TODO : check this??
     tr_losses = np.zeros(num_epochs)
     te_losses = np.zeros(num_epochs)
     rmse_losses = np.zeros(num_epochs)
@@ -19,7 +19,7 @@ def training_loop(model, optimizer, num_epochs, trainloader, testloader, device,
         rmse_losses[epoch_nr] = rmse_loss
         # Save model if best accuracy on validation dataset until now
         if rmse_loss > best_val_loss:
-            best_val_loss = rmse_loss #TODO : check this
+            best_val_loss = rmse_loss #TODO : check this??
             torch.save(model.state_dict(), './cifar_net.pth')
 
         if folder:

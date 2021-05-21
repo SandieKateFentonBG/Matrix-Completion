@@ -46,7 +46,8 @@ def I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epo
 
 
     #TODO: set model results in class
-    model..
+    model.rmse_loss =
+
     #TODO: set model results in class
 
     return [mystudy, x_train, x_test, x_val, trainloader, testloader, valloader, model, tr_losses, te_losses, rmse_losses, best_val_loss, perc_acc]

@@ -2,10 +2,39 @@
 from s09_I_autorec_model import *
 
 
+def identify_tuning_parameter():
+    pass
+
+def run_model_architectures(project, database, date, num_epochs, learning_rate,
+                                   variable_dict, VISU = False, new_folder=False, folder = None, reference = None):
+    regul_list = variable_dict['regularization_term']
+    hidden_list = variable_dict['hidden_dim']
+
+    studied_attr = []
+    if len(regul_list) > 1:
+        studied_attr = ['regularization_term']#TODO : change this i the referencing!
+    if len(hidden_list) > 1:
+        studied_attr.append('regularization_term')#TODO : change this i the referencing!
+
+    AE_list = []
+    for r in regul_list:
+        for h in hidden_list:
+            myAE = I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epochs, learning_rate,
+                                   regularization_term,
+                                   studied_attr, VISU=VISU, new_folder=new_folder, folder=folder, reference=reference)
+            myAE.
+            AE_list.append(myAE)
+
+    return AE_list
+
+def return_model_results(AE_list):
+
+
+
+
 def tune_model_architecture_hidden(project, database, date, selected_group, hidden_dim_list, num_epochs, learning_rate, regularization_term,
                                    studied_attr, VISU = False, new_folder=False, folder = None, reference = None):
 
-    #TODO : how can this process be done with validationset and not train set? should be trained on training, and tested on validation !!
 
     AE_list = []
 
@@ -94,37 +123,7 @@ def hypertune_model_architecture_regul(project, database, date, selected_group, 
 
     return AE_list, regularization_term_list, autorec_loss_list, perc_acc_list, rmse_loss_list, best_val_loss_list
 
-def plot_x_y_graph(x_list, y_list, x_label, y_label, title=None, folder=None, VISU=False):
-
-    import matplotlib.pyplot as plt
-
-    plt.figure()
-    plt.plot(xdata = x_list, ydata = y_list,  label='Validation')
-    if not title:
-        title = x_label + 'as a function of' + y_label
-    plt.title(reference)
-    plt.ylabel(y_label)
-    plt.xlabel(x_label)
-    plt.legend()
-    if folder:
-        plt.savefig(folder + title + '.png')
-    if VISU:
-        plt.show()
 
 
-def plot_sns_graph(x_list, y_list, x_label, y_label, title=None, figure_size=(12,15), folder=None, plot=False):
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    df = pd.DataFrame(list(zip(x_list, y_list)), columns =[x_label, y_label])
-    fig, ax = plt.subplots(figsize=figure_size)
-    if not title :
-        title = x_label + 'as a function of' + y_label
-    ax.set_title(title)
-    sns.scatterplot(data=df, x=x_label, y=y_label, hue=y_label)
-    if folder :
-        plt.savefig(folder + '/'+ x_label + '-' + y_label +'.png')
-    if plot:
-        plt.show()
 
 

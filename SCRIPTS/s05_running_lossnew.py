@@ -1,6 +1,6 @@
 from s04_evaluation_functions import *
 
-def autorec_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
+def run_training(dataloader, optimizer, model, device, regul = 0.5): #todo : new name
 
     # Train model
     running_loss = 0.0
@@ -26,34 +26,39 @@ def autorec_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
         # parameter update based on the current gradient
 
         running_loss += loss.item()
-        running_acc += compute_run_acc(logits, batch_labels)
-
+        running_acc += compute_acc(pred, batch_data)
 
     tr_loss = running_loss / len(dataloader.dataset) #tr_loss = scalar
     tr_acc = 100 * running_acc/len(dataloader.dataset)
 
-    return tr_loss, tr_acc
+    dict = dict()
+    dict['autorec_tr_loss'] = tr_loss
+    dict['autorec_tr_acc'] = tr_acc
 
-    print('>> TRAIN: Epoch {} completed | tr_loss: {:.4f} | tr_acc: {:.2f}%'.format(
-        epoch_nr, running_loss / len(trainloader.dataset), tr_acc))
+    return dict
 
-    # Get validation results
-    running_acc = 0
-    with torch.no_grad():
-        for batch_data, batch_labels in valloader:
-            batch_data, batch_labels = batch_data.to(device), batch_labels.to(device)
-            logits = model(batch_data)
-            running_acc += compute_run_acc(logits, batch_labels)
+    #print('>> TRAIN: Epoch {} completed | tr_loss: {:.4f} | tr_acc: {:.2f}%'.format(
+    #    epoch_nr, running_loss / len(trainloader.dataset), tr_acc))
 
-def compute_run_acc(logits, labels):
-    _, pred = torch.max(logits.data, 1)
-    return (pred == labels).sum().item()
 
-def compute_te_loss(testloader, model, device, regul = None):
+def compute_acc(pred, groundtruth, mask = 99.0, range = 20, round = False):
+
+    bool_mask = groundtruth != mask
+    if round:
+        groundtruth = torch.round(groundtruth)
+        pred = torch.round(pred)
+    scaled_diff = torch.abs(groundtruth - pred) / range
+    masked_perc = torch.sum(scaled_diff * bool_mask)/torch.sum(torch.ones_like(batch_data) * bool_mask)
+    acc = 100 * (1 - masked_perc.item())
+
+    return acc
+
+def run_testing(testloader, model, device, regul = None):
 
     # Get validation results from testing set
     running_autorec_loss = 0
     running_rmse_loss = 0
+    running_acc = 0
     #compute running accuracy
     with torch.no_grad():  # TODO : here no .backward() needed
         for batch_data in testloader:
@@ -61,10 +66,18 @@ def compute_te_loss(testloader, model, device, regul = None):
             output = model(batch_data)
             running_autorec_loss += autorec_loss(output, batch_data, model, regul = regul) # TODO : regul on testing?
             running_rmse_loss += RMSELoss(output, batch_data)
+            running_acc += compute_acc(output, batch_data)
+
     te_loss = running_autorec_loss / len(testloader.dataset)
     rmse_loss = running_rmse_loss / len(testloader.dataset)
+    te_acc = 100 * running_acc/len(testloader.dataset)
 
-    return te_loss, rmse_loss
+    dict = dict()
+    dict['autorec_te_loss'] = te_loss
+    dict['rmse_te_loss'] = rmse_loss
+    dict['te_acc'] = te_acc
+
+    return dict
 
 def running_loss_print(new_folder=False, folder = None, VISU = False, reference = None):
 
