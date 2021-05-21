@@ -1,0 +1,56 @@
+0. Paths
+ reference :  210518_results_for_hidden_dim_500
+ input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+ output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210518_results/
+1. Parameter selection
+  study  :  0
+  database_group_split  :  5
+  selected_group  :  0
+  batch_size  :  8
+  input_dim  :  [7699, 158]
+  hidden_dim  :  500
+  num_epochs  :  5
+  learning_rate  :  0.01
+  regularization_term  :  0.001
+  device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+3. Model definition
+ model Autorec(
+  (hidden): Linear(in_features=1539, out_features=500, bias=True)
+  (predict): Linear(in_features=500, out_features=1539, bias=True)
+)
+ optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.01
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+ number of trainable parameters: 1541039
+ loss function :  custom autorec loss
+6. Training Loop
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 32296088.1816
+>> VALIDATION: Epoch 0 | te_loss: 2431292.0000
+6. Training Loop
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 349288.6984
+>> VALIDATION: Epoch 1 | te_loss: 34163.3867
+6. Training Loop
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 12648.2013
+>> VALIDATION: Epoch 2 | te_loss: 13649.7881
+6. Training Loop
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 7789.2581
+>> VALIDATION: Epoch 3 | te_loss: 12152.7168
+6. Training Loop
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 6971.1554
+>> VALIDATION: Epoch 4 | te_loss: 10719.0430
+7. Investigate results
+prediction accuracy : 70.834881067276 %
+( 825.0811767578125  total margin (pred-truth/20) for  2829.0  predicted ratings )

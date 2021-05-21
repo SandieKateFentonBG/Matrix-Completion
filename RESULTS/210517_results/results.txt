@@ -1,0 +1,3132 @@
+0. Paths
+reference :  210517_results_0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  500
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.5
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000,  2.9300,  ...,  3.5200,  6.6700, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  0.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=500, bias=True)
+  (predict): Linear(in_features=500, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 1541039
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 21172.9774
+>> VALIDATION: Epoch 0 | te_loss: 7589.4170
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 5236.5867
+>> VALIDATION: Epoch 1 | te_loss: 4696.6504
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2910.4774
+>> VALIDATION: Epoch 2 | te_loss: 3989.3403
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2747.8837
+>> VALIDATION: Epoch 3 | te_loss: 4012.7485
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2706.7631
+>> VALIDATION: Epoch 4 | te_loss: 4047.6353
+0. Paths
+reference :  210517_results_0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  500
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.5
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=500, bias=True)
+  (predict): Linear(in_features=500, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 1541039
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 28898.5850
+>> VALIDATION: Epoch 0 | te_loss: 9128.2617
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4094.8541
+>> VALIDATION: Epoch 1 | te_loss: 4681.2251
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2663.9922
+>> VALIDATION: Epoch 2 | te_loss: 3920.9734
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2505.0700
+>> VALIDATION: Epoch 3 | te_loss: 3954.2327
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2466.4728
+>> VALIDATION: Epoch 4 | te_loss: 3955.7385
+0. Paths
+reference :  210517_results_0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  500
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.5
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=500, bias=True)
+  (predict): Linear(in_features=500, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 1541039
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 30727.5212
+>> VALIDATION: Epoch 0 | te_loss: 7090.9878
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4174.7490
+>> VALIDATION: Epoch 1 | te_loss: 4125.7368
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2653.8388
+>> VALIDATION: Epoch 2 | te_loss: 3986.5972
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2518.2677
+>> VALIDATION: Epoch 3 | te_loss: 4037.3474
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2488.6068
+>> VALIDATION: Epoch 4 | te_loss: 4031.9702
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 11314.4965
+>> VALIDATION: Epoch 0 | te_loss: 4329.5107
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3312.4123
+>> VALIDATION: Epoch 1 | te_loss: 3753.4780
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2791.6658
+>> VALIDATION: Epoch 2 | te_loss: 3540.0103
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2666.5930
+>> VALIDATION: Epoch 3 | te_loss: 3539.5881
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2647.2454
+>> VALIDATION: Epoch 4 | te_loss: 3558.8064
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 6716.5165
+>> VALIDATION: Epoch 0 | te_loss: 4707.8311
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4150.9751
+>> VALIDATION: Epoch 1 | te_loss: 4022.2024
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2909.7884
+>> VALIDATION: Epoch 2 | te_loss: 3782.4475
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2822.5335
+>> VALIDATION: Epoch 3 | te_loss: 3783.3210
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2810.4294
+>> VALIDATION: Epoch 4 | te_loss: 3791.6731
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 4592.9973
+>> VALIDATION: Epoch 0 | te_loss: 6250.2256
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3401.0033
+>> VALIDATION: Epoch 1 | te_loss: 3771.1853
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2783.9005
+>> VALIDATION: Epoch 2 | te_loss: 3717.1831
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2699.5252
+>> VALIDATION: Epoch 3 | te_loss: 3718.4563
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2686.1477
+>> VALIDATION: Epoch 4 | te_loss: 3724.0825
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  2.3200],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, -5.3500, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 19249.9132
+>> VALIDATION: Epoch 0 | te_loss: 5306.2026
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3813.6502
+>> VALIDATION: Epoch 1 | te_loss: 3701.3499
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2785.9735
+>> VALIDATION: Epoch 2 | te_loss: 3572.4497
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2701.5104
+>> VALIDATION: Epoch 3 | te_loss: 3591.8555
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2684.8503
+>> VALIDATION: Epoch 4 | te_loss: 3610.9983
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ...,  6.8900, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5171.9739
+>> VALIDATION: Epoch 0 | te_loss: 5196.5850
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3443.6538
+>> VALIDATION: Epoch 1 | te_loss: 3836.4932
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2930.3163
+>> VALIDATION: Epoch 2 | te_loss: 3702.3171
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2836.3204
+>> VALIDATION: Epoch 3 | te_loss: 3696.6655
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2818.1954
+>> VALIDATION: Epoch 4 | te_loss: 3695.4939
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  1.6100,  ..., 99.0000,  0.0000, 99.0000],
+        [99.0000, 99.0000,  0.0000,  ..., 99.0000,  0.0000, -6.3800],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, -3.5800,  0.0000],
+        [99.0000, 99.0000,  0.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 9372.5883
+>> VALIDATION: Epoch 0 | te_loss: 5027.9116
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3545.8393
+>> VALIDATION: Epoch 1 | te_loss: 3556.6714
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2881.1643
+>> VALIDATION: Epoch 2 | te_loss: 3605.8269
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2754.7080
+>> VALIDATION: Epoch 3 | te_loss: 3578.3169
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2732.5477
+>> VALIDATION: Epoch 4 | te_loss: 3601.7817
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 7866.3404
+>> VALIDATION: Epoch 0 | te_loss: 69421.3438
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 8074.1259
+>> VALIDATION: Epoch 1 | te_loss: 3572.7295
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2751.8896
+>> VALIDATION: Epoch 2 | te_loss: 3563.3513
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2648.7697
+>> VALIDATION: Epoch 3 | te_loss: 3574.2019
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2627.5489
+>> VALIDATION: Epoch 4 | te_loss: 3571.4121
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  2.0100, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  0.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 3988.8948
+>> VALIDATION: Epoch 0 | te_loss: 3761.9019
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3369.2892
+>> VALIDATION: Epoch 1 | te_loss: 3572.3076
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2732.6944
+>> VALIDATION: Epoch 2 | te_loss: 3489.2085
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2622.4595
+>> VALIDATION: Epoch 3 | te_loss: 3507.9209
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2607.0211
+>> VALIDATION: Epoch 4 | te_loss: 3509.6289
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[ 9.9000e+01,  9.9000e+01,  9.9000e+01,  ...,  9.9000e+01,
+          9.9000e+01,  9.9000e+01],
+        [ 9.9000e+01,  4.9600e+00,  0.0000e+00,  ...,  6.0000e-02,
+         -2.6000e+00,  0.0000e+00],
+        [ 9.9000e+01,  9.9000e+01,  9.9000e+01,  ...,  9.9000e+01,
+          9.9000e+01,  9.9000e+01],
+        ...,
+        [ 0.0000e+00, -4.2600e+00,  4.1600e+00,  ..., -6.6900e+00,
+          0.0000e+00,  0.0000e+00],
+        [ 9.9000e+01,  9.9000e+01,  9.9000e+01,  ...,  9.9000e+01,
+          9.9000e+01,  9.9000e+01],
+        [ 9.9000e+01,  1.2100e+00, -4.6700e+00,  ...,  9.9000e+01,
+          9.9000e+01,  9.9000e+01]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 15827.5846
+>> VALIDATION: Epoch 0 | te_loss: 5155.5605
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4052.5522
+>> VALIDATION: Epoch 1 | te_loss: 4002.9319
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3067.5661
+>> VALIDATION: Epoch 2 | te_loss: 3800.7183
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2933.0115
+>> VALIDATION: Epoch 3 | te_loss: 3826.1038
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2912.3825
+>> VALIDATION: Epoch 4 | te_loss: 3843.5981
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [-9.6600, -0.8900,  0.0000,  ...,  3.0900,  0.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  0.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  9.4300, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 11745.9580
+>> VALIDATION: Epoch 0 | te_loss: 20939.9004
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4251.6738
+>> VALIDATION: Epoch 1 | te_loss: 4177.7578
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2888.0730
+>> VALIDATION: Epoch 2 | te_loss: 3710.9126
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2759.0849
+>> VALIDATION: Epoch 3 | te_loss: 3723.7542
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2741.6672
+>> VALIDATION: Epoch 4 | te_loss: 3745.5039
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 9.8400, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 6350.1024
+>> VALIDATION: Epoch 0 | te_loss: 4629.4346
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3661.2353
+>> VALIDATION: Epoch 1 | te_loss: 4415.6885
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2859.4231
+>> VALIDATION: Epoch 2 | te_loss: 4069.4160
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2751.1508
+>> VALIDATION: Epoch 3 | te_loss: 4097.9478
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2730.8145
+>> VALIDATION: Epoch 4 | te_loss: 4077.5244
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99.,  0., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 7457.7553
+>> VALIDATION: Epoch 0 | te_loss: 21822.8398
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4363.3954
+>> VALIDATION: Epoch 1 | te_loss: 3945.5625
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2975.6951
+>> VALIDATION: Epoch 2 | te_loss: 3868.2539
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2863.5144
+>> VALIDATION: Epoch 3 | te_loss: 3853.2285
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2842.2507
+>> VALIDATION: Epoch 4 | te_loss: 3843.6807
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5916.8696
+>> VALIDATION: Epoch 0 | te_loss: 69129.7656
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7806.9164
+>> VALIDATION: Epoch 1 | te_loss: 3544.1187
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2402.3047
+>> VALIDATION: Epoch 2 | te_loss: 3091.4868
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2310.9906
+>> VALIDATION: Epoch 3 | te_loss: 3090.3477
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2297.1203
+>> VALIDATION: Epoch 4 | te_loss: 3097.6470
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 5.6900, 99.0000, -1.3500,  ...,  1.3600, -4.1700, 99.0000],
+        [-3.3700, 99.0000, 99.0000,  ..., 99.0000,  4.3500, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 1.4200, 99.0000,  6.7800,  ...,  2.5400,  5.0200, 99.0000],
+        [ 3.4100, 99.0000, 99.0000,  ..., 99.0000,  2.8600, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 21542.3697
+>> VALIDATION: Epoch 0 | te_loss: 4261.3916
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3839.9371
+>> VALIDATION: Epoch 1 | te_loss: 3881.6470
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2780.0700
+>> VALIDATION: Epoch 2 | te_loss: 3603.8755
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2696.1507
+>> VALIDATION: Epoch 3 | te_loss: 3601.1689
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2677.0019
+>> VALIDATION: Epoch 4 | te_loss: 3599.2869
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000,  8.1000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000,  6.0200,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 8324.5161
+>> VALIDATION: Epoch 0 | te_loss: 5861.9048
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3478.8285
+>> VALIDATION: Epoch 1 | te_loss: 4026.6904
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2915.1697
+>> VALIDATION: Epoch 2 | te_loss: 3861.2734
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2840.7040
+>> VALIDATION: Epoch 3 | te_loss: 3884.4312
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2828.1331
+>> VALIDATION: Epoch 4 | te_loss: 3871.9355
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  5.8500],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 12279.6436
+>> VALIDATION: Epoch 0 | te_loss: 4545.0635
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4353.5278
+>> VALIDATION: Epoch 1 | te_loss: 4424.0298
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3032.7180
+>> VALIDATION: Epoch 2 | te_loss: 4372.9473
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2947.3710
+>> VALIDATION: Epoch 3 | te_loss: 4413.0278
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2931.3096
+>> VALIDATION: Epoch 4 | te_loss: 4421.0518
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  -2.9100,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000, -10.0000,  99.0000],
+        ...,
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,   1.4800,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,   3.8900,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 10492.5589
+>> VALIDATION: Epoch 0 | te_loss: 5674.9189
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3741.4149
+>> VALIDATION: Epoch 1 | te_loss: 4255.6816
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2860.1539
+>> VALIDATION: Epoch 2 | te_loss: 4030.9160
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2762.2661
+>> VALIDATION: Epoch 3 | te_loss: 4100.2144
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2743.7505
+>> VALIDATION: Epoch 4 | te_loss: 4092.7600
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, -8.7200, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, -9.6300, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  9.4300, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  4.8200, 99.0000],
+        [ 0.0000, 99.0000,  0.0000,  ..., 99.0000,  4.6500, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5000.1402
+>> VALIDATION: Epoch 0 | te_loss: 81972.5469
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7966.9566
+>> VALIDATION: Epoch 1 | te_loss: 3985.2920
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2859.6620
+>> VALIDATION: Epoch 2 | te_loss: 3914.2556
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2749.4700
+>> VALIDATION: Epoch 3 | te_loss: 3874.1865
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2728.9561
+>> VALIDATION: Epoch 4 | te_loss: 3877.8110
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 8200.9542
+>> VALIDATION: Epoch 0 | te_loss: 80607.1797
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7183.0695
+>> VALIDATION: Epoch 1 | te_loss: 3731.9849
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2752.8947
+>> VALIDATION: Epoch 2 | te_loss: 3420.0012
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2641.1467
+>> VALIDATION: Epoch 3 | te_loss: 3426.6716
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2624.9551
+>> VALIDATION: Epoch 4 | te_loss: 3421.5117
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, -4.2700],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 4.7400, 99.0000, 99.0000,  ...,  2.0100, 99.0000, -3.0100],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 20344.3861
+>> VALIDATION: Epoch 0 | te_loss: 4644.7026
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7570.2390
+>> VALIDATION: Epoch 1 | te_loss: 4194.1934
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2782.3147
+>> VALIDATION: Epoch 2 | te_loss: 3628.9915
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2666.8137
+>> VALIDATION: Epoch 3 | te_loss: 3683.8918
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2640.4614
+>> VALIDATION: Epoch 4 | te_loss: 3658.2417
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000],
+        ...,
+        [ 99.0000, -10.0000,  -2.2600,  ...,  99.0000,  99.0000,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000],
+        [ 99.0000,  99.0000,  99.0000,  ...,  99.0000,  99.0000,  99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 11210.6387
+>> VALIDATION: Epoch 0 | te_loss: 64696.4766
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7309.1305
+>> VALIDATION: Epoch 1 | te_loss: 3694.4001
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2695.9513
+>> VALIDATION: Epoch 2 | te_loss: 3467.5549
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2608.4333
+>> VALIDATION: Epoch 3 | te_loss: 3461.3809
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2598.7441
+>> VALIDATION: Epoch 4 | te_loss: 3461.6499
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000,  2.6200,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 7148.4718
+>> VALIDATION: Epoch 0 | te_loss: 85262.1484
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 8645.0931
+>> VALIDATION: Epoch 1 | te_loss: 4132.1616
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2927.6492
+>> VALIDATION: Epoch 2 | te_loss: 4064.3831
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2834.6008
+>> VALIDATION: Epoch 3 | te_loss: 4036.9880
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2821.7003
+>> VALIDATION: Epoch 4 | te_loss: 4043.9341
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000,  6.8500,  ..., 99.0000,  0.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  3.1700,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 8158.3394
+>> VALIDATION: Epoch 0 | te_loss: 4467.8975
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4119.9746
+>> VALIDATION: Epoch 1 | te_loss: 4097.8350
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3002.3686
+>> VALIDATION: Epoch 2 | te_loss: 3921.8218
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2880.8936
+>> VALIDATION: Epoch 3 | te_loss: 3949.7378
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2863.6026
+>> VALIDATION: Epoch 4 | te_loss: 3972.2798
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 4271.9450
+>> VALIDATION: Epoch 0 | te_loss: 4351.2915
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3608.4012
+>> VALIDATION: Epoch 1 | te_loss: 3997.9688
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2780.3138
+>> VALIDATION: Epoch 2 | te_loss: 3861.6904
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2662.5867
+>> VALIDATION: Epoch 3 | te_loss: 3824.5916
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2656.8290
+>> VALIDATION: Epoch 4 | te_loss: 3865.1321
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000,  9.6100, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [-9.8900,  2.9100,  4.8800,  ..., -9.5100,  0.0000,  0.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 8521.5811
+>> VALIDATION: Epoch 0 | te_loss: 5126.8740
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3343.0442
+>> VALIDATION: Epoch 1 | te_loss: 3630.2083
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2753.3565
+>> VALIDATION: Epoch 2 | te_loss: 3624.9099
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2633.4636
+>> VALIDATION: Epoch 3 | te_loss: 3530.8335
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2620.3534
+>> VALIDATION: Epoch 4 | te_loss: 3516.2202
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ...,  5.5900, 99.0000,  0.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  5.1700, 99.0000, 99.0000],
+        [-0.8400, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  4.4100, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  3.3700, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 11381.2228
+>> VALIDATION: Epoch 0 | te_loss: 4183.6069
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3581.1685
+>> VALIDATION: Epoch 1 | te_loss: 3923.9351
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2996.6768
+>> VALIDATION: Epoch 2 | te_loss: 3827.3037
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2902.4090
+>> VALIDATION: Epoch 3 | te_loss: 3811.3684
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2883.8219
+>> VALIDATION: Epoch 4 | te_loss: 3824.1384
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[ 5.3700,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  5.3500,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 3.7800,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 10630.5382
+>> VALIDATION: Epoch 0 | te_loss: 4148.9121
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3627.0191
+>> VALIDATION: Epoch 1 | te_loss: 3753.4954
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2818.3360
+>> VALIDATION: Epoch 2 | te_loss: 3508.2632
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2725.3717
+>> VALIDATION: Epoch 3 | te_loss: 3505.1899
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2711.5331
+>> VALIDATION: Epoch 4 | te_loss: 3507.3218
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  2.9300,  3.2400],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5645.4799
+>> VALIDATION: Epoch 0 | te_loss: 4567.3115
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3782.3236
+>> VALIDATION: Epoch 1 | te_loss: 4121.8838
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2901.3865
+>> VALIDATION: Epoch 2 | te_loss: 3984.5789
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2784.3299
+>> VALIDATION: Epoch 3 | te_loss: 4022.4082
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2764.3074
+>> VALIDATION: Epoch 4 | te_loss: 4028.4775
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 4276.7730
+>> VALIDATION: Epoch 0 | te_loss: 4059.8896
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3694.9814
+>> VALIDATION: Epoch 1 | te_loss: 4003.1104
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2674.0575
+>> VALIDATION: Epoch 2 | te_loss: 3729.1699
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2576.4593
+>> VALIDATION: Epoch 3 | te_loss: 3782.7920
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2559.1496
+>> VALIDATION: Epoch 4 | te_loss: 3783.3740
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[ 8.7400, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [-5.3300, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [-9.4300, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 1.1800, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [-7.6800, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5771.3082
+>> VALIDATION: Epoch 0 | te_loss: 4467.2612
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3601.9628
+>> VALIDATION: Epoch 1 | te_loss: 4160.7358
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2986.2969
+>> VALIDATION: Epoch 2 | te_loss: 4008.1685
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2879.8998
+>> VALIDATION: Epoch 3 | te_loss: 3978.8638
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2863.7937
+>> VALIDATION: Epoch 4 | te_loss: 4015.3865
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ...,  0.7900, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000, 99.0000,  ...,  0.6100, 99.0000, 99.0000],
+        ...,
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000,  0.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 7.5800, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 8524.0992
+>> VALIDATION: Epoch 0 | te_loss: 5008.3584
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3534.9011
+>> VALIDATION: Epoch 1 | te_loss: 4227.3882
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3014.8544
+>> VALIDATION: Epoch 2 | te_loss: 4249.4292
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2948.0201
+>> VALIDATION: Epoch 3 | te_loss: 4221.8481
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2927.7069
+>> VALIDATION: Epoch 4 | te_loss: 4245.2354
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  0.0000,  ...,  5.5200, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 17349.4227
+>> VALIDATION: Epoch 0 | te_loss: 5480.6982
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3375.8964
+>> VALIDATION: Epoch 1 | te_loss: 3734.1531
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2701.0827
+>> VALIDATION: Epoch 2 | te_loss: 3425.1472
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2606.8264
+>> VALIDATION: Epoch 3 | te_loss: 3416.4368
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2593.1409
+>> VALIDATION: Epoch 4 | te_loss: 3414.1951
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000,  9.1500, -5.7500,  ..., 99.0000, -3.6200, 99.0000],
+        [99.0000, -0.9300, 99.0000,  ...,  0.0000,  0.0000,  5.2100],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, -6.1400, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 7523.9879
+>> VALIDATION: Epoch 0 | te_loss: 4978.5039
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3325.4868
+>> VALIDATION: Epoch 1 | te_loss: 4011.9668
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2807.8329
+>> VALIDATION: Epoch 2 | te_loss: 3823.5024
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2706.4404
+>> VALIDATION: Epoch 3 | te_loss: 3810.9653
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2685.1295
+>> VALIDATION: Epoch 4 | te_loss: 3835.3171
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  2.9000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 7983.9724
+>> VALIDATION: Epoch 0 | te_loss: 12703.5508
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4498.1907
+>> VALIDATION: Epoch 1 | te_loss: 4274.7183
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3105.5722
+>> VALIDATION: Epoch 2 | te_loss: 4039.8171
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2956.9568
+>> VALIDATION: Epoch 3 | te_loss: 4070.9072
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2936.5319
+>> VALIDATION: Epoch 4 | te_loss: 4067.9500
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 0.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [ 7.2800, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 3.8600, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 15628.5789
+>> VALIDATION: Epoch 0 | te_loss: 56413.5820
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 6863.4404
+>> VALIDATION: Epoch 1 | te_loss: 4063.2739
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2997.1433
+>> VALIDATION: Epoch 2 | te_loss: 3763.3120
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2874.6003
+>> VALIDATION: Epoch 3 | te_loss: 3783.0798
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2847.2349
+>> VALIDATION: Epoch 4 | te_loss: 3766.7998
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  7.6400],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  5.0400],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  4.0800]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 16572.3391
+>> VALIDATION: Epoch 0 | te_loss: 5032.8701
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4355.9907
+>> VALIDATION: Epoch 1 | te_loss: 4337.0273
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3071.0898
+>> VALIDATION: Epoch 2 | te_loss: 4119.2959
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2923.2450
+>> VALIDATION: Epoch 3 | te_loss: 4121.3721
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2898.1344
+>> VALIDATION: Epoch 4 | te_loss: 4136.2383
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000,  6.4600,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  0.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [ 3.3000,  2.0800,  3.8200,  ..., -0.2800,  0.0000, -8.6600]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 4905.5566
+>> VALIDATION: Epoch 0 | te_loss: 3602.3325
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3598.8536
+>> VALIDATION: Epoch 1 | te_loss: 3632.1169
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2733.4369
+>> VALIDATION: Epoch 2 | te_loss: 3316.5791
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2619.1735
+>> VALIDATION: Epoch 3 | te_loss: 3350.7249
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2599.2007
+>> VALIDATION: Epoch 4 | te_loss: 3352.1665
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  0.0000,  ...,  1.3600, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  5.6300, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000,  0.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ...,  1.2800, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 6757.7503
+>> VALIDATION: Epoch 0 | te_loss: 85871.9219
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7595.7722
+>> VALIDATION: Epoch 1 | te_loss: 3924.4878
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2887.4169
+>> VALIDATION: Epoch 2 | te_loss: 3571.0386
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2740.0773
+>> VALIDATION: Epoch 3 | te_loss: 3577.0088
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2723.8947
+>> VALIDATION: Epoch 4 | te_loss: 3576.8745
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 10.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  5.1800,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 8919.8516
+>> VALIDATION: Epoch 0 | te_loss: 32559.9375
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 5982.5509
+>> VALIDATION: Epoch 1 | te_loss: 4382.5063
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3021.1816
+>> VALIDATION: Epoch 2 | te_loss: 4071.4287
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2881.8093
+>> VALIDATION: Epoch 3 | te_loss: 4069.1709
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2855.3392
+>> VALIDATION: Epoch 4 | te_loss: 4076.4536
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5005.9922
+>> VALIDATION: Epoch 0 | te_loss: 5239.3706
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 4975.3489
+>> VALIDATION: Epoch 1 | te_loss: 4532.4727
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3002.8150
+>> VALIDATION: Epoch 2 | te_loss: 4277.5874
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2921.3822
+>> VALIDATION: Epoch 3 | te_loss: 4306.8428
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2904.2930
+>> VALIDATION: Epoch 4 | te_loss: 4285.0552
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  0.9800],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  2.6400],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, -3.5400],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  2.8000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 21414.4585
+>> VALIDATION: Epoch 0 | te_loss: 37967.8281
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 7493.2207
+>> VALIDATION: Epoch 1 | te_loss: 4283.6602
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2911.4899
+>> VALIDATION: Epoch 2 | te_loss: 3919.0986
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2795.2442
+>> VALIDATION: Epoch 3 | te_loss: 3911.1240
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2775.5515
+>> VALIDATION: Epoch 4 | te_loss: 3911.7161
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000,  1.8300,  ..., 99.0000,  0.0000,  0.4900],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  7.1100,  ..., 99.0000,  0.0000,  0.6500]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 11400.8972
+>> VALIDATION: Epoch 0 | te_loss: 4414.0161
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3559.7778
+>> VALIDATION: Epoch 1 | te_loss: 3990.6414
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 3020.8780
+>> VALIDATION: Epoch 2 | te_loss: 3716.9067
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2883.1373
+>> VALIDATION: Epoch 3 | te_loss: 3711.6406
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2855.6063
+>> VALIDATION: Epoch 4 | te_loss: 3702.1670
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 19021.4936
+>> VALIDATION: Epoch 0 | te_loss: 4028.6238
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3382.1233
+>> VALIDATION: Epoch 1 | te_loss: 3979.3276
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2740.4745
+>> VALIDATION: Epoch 2 | te_loss: 3488.7715
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2632.3760
+>> VALIDATION: Epoch 3 | te_loss: 3505.0518
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2616.3415
+>> VALIDATION: Epoch 4 | te_loss: 3513.5886
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[10.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  3.8600],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [-9.6500, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  9.5700],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 7341.2200
+>> VALIDATION: Epoch 0 | te_loss: 4019.8105
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3573.3583
+>> VALIDATION: Epoch 1 | te_loss: 3864.2725
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2873.3014
+>> VALIDATION: Epoch 2 | te_loss: 3647.0391
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2756.5182
+>> VALIDATION: Epoch 3 | te_loss: 3676.5222
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2730.3087
+>> VALIDATION: Epoch 4 | te_loss: 3692.0364
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, -9.3200],
+        ...,
+        [99.0000,  7.2400, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 25440.6084
+>> VALIDATION: Epoch 0 | te_loss: 4060.5820
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3169.9474
+>> VALIDATION: Epoch 1 | te_loss: 3753.0073
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2677.6604
+>> VALIDATION: Epoch 2 | te_loss: 3649.0439
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2566.5737
+>> VALIDATION: Epoch 3 | te_loss: 3626.8108
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2551.6484
+>> VALIDATION: Epoch 4 | te_loss: 3641.9290
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, -1.7100,  0.9300],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, -9.4700],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ...,  2.9300, -1.5900, -9.7600],
+        [99.0000, 99.0000, 99.0000,  ..., -2.6800,  0.6900, -7.4800],
+        [99.0000, 99.0000, 99.0000,  ..., -2.7600, -5.2000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5229.8899
+>> VALIDATION: Epoch 0 | te_loss: 4267.0420
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3586.5857
+>> VALIDATION: Epoch 1 | te_loss: 3884.4539
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2875.9076
+>> VALIDATION: Epoch 2 | te_loss: 3732.1392
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2757.2017
+>> VALIDATION: Epoch 3 | te_loss: 3775.1689
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2738.7111
+>> VALIDATION: Epoch 4 | te_loss: 3768.5583
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000,  9.8800,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  0.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [-9.5900,  2.8000,  0.7700,  ...,  2.9100, 99.0000,  0.0000],
+        ...,
+        [99.0000, 99.0000,  3.7400,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000,  1.8500]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 5966.2769
+>> VALIDATION: Epoch 0 | te_loss: 5179.9058
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3869.5969
+>> VALIDATION: Epoch 1 | te_loss: 4085.8989
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2989.0448
+>> VALIDATION: Epoch 2 | te_loss: 4028.7996
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2901.9846
+>> VALIDATION: Epoch 3 | te_loss: 4010.5813
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2885.3233
+>> VALIDATION: Epoch 4 | te_loss: 4001.5186
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, -4.2500, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, -1.4300, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 4907.6894
+>> VALIDATION: Epoch 0 | te_loss: 5643.6025
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 3988.4347
+>> VALIDATION: Epoch 1 | te_loss: 4564.7534
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2887.9325
+>> VALIDATION: Epoch 2 | te_loss: 4065.3542
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2775.2172
+>> VALIDATION: Epoch 3 | te_loss: 4090.8032
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2753.5142
+>> VALIDATION: Epoch 4 | te_loss: 4131.6040
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        ...,
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.],
+        [99., 99., 99.,  ..., 99., 99., 99.]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 13095.6709
+>> VALIDATION: Epoch 0 | te_loss: 86349.0391
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 9529.2015
+>> VALIDATION: Epoch 1 | te_loss: 4078.7290
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2904.1618
+>> VALIDATION: Epoch 2 | te_loss: 3852.0664
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2790.4673
+>> VALIDATION: Epoch 3 | te_loss: 3885.5903
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2775.1956
+>> VALIDATION: Epoch 4 | te_loss: 3888.3621
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, -9.9000, 99.0000,  ...,  0.0000, 99.0000,  0.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 4745.7186
+>> VALIDATION: Epoch 0 | te_loss: 4397.3999
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 5784.0499
+>> VALIDATION: Epoch 1 | te_loss: 3818.3164
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2843.7021
+>> VALIDATION: Epoch 2 | te_loss: 3700.0015
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2731.0223
+>> VALIDATION: Epoch 3 | te_loss: 3740.9194
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2714.6426
+>> VALIDATION: Epoch 4 | te_loss: 3757.7441
+7. Investigate results
+prediction accuracy : 100.0 %  ( 473.93798828125  total margin (pred-truth/20) for  2821.0  predicted ratings )
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000,  2.6000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  9.5900, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000,  1.7900, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 24010.0641
+>> VALIDATION: Epoch 0 | te_loss: 4948.4448
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 5814.3687
+>> VALIDATION: Epoch 1 | te_loss: 4243.2305
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2784.5834
+>> VALIDATION: Epoch 2 | te_loss: 3835.9639
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2704.1672
+>> VALIDATION: Epoch 3 | te_loss: 3828.3875
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2684.7996
+>> VALIDATION: Epoch 4 | te_loss: 3860.6543
+7. Investigate results
+prediction accuracy : 82.71129429340363 %  ( 482.70068359375  total margin (pred-truth/20) for  2792.0  predicted ratings )
+0. Paths
+reference :  210517_results_for_selected_group : 0
+input_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+output_path :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210517_results/
+1. Parameter selection
+study  :  0
+database_group_split  :  5
+selected_group  :  0
+batch_size  :  8
+input_dim  :  [7699, 158]
+hidden_dim  :  10
+num_epochs  :  5
+learning_rate  :  0.001
+regularization_term  :  0.05
+device  :  cuda:0
+2. Data initialization
+  train : (127, 1539)
+  test : (16, 1539)
+  validate : (15, 1539)
+example_ratings :  tensor([[99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  4.4700,  ..., 99.0000, 99.0000, 99.0000],
+        [99.0000, 99.0000,  1.4200,  ...,  5.0700, 99.0000, 99.0000],
+        ...,
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000],
+        [-6.6500, 99.0000, -3.9700,  ..., -2.4500, 99.0000, 99.0000],
+        [99.0000, 99.0000, 99.0000,  ..., 99.0000, 99.0000, 99.0000]])
+3. Model definition
+model Autorec(
+  (hidden): Linear(in_features=1539, out_features=10, bias=True)
+  (predict): Linear(in_features=10, out_features=1539, bias=True)
+)
+optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+4. Evaluation function
+number of trainable parameters: 32329
+loss function :  custom autorec loss
+5. Running loss
+Epoch 0:
+>> TRAIN: Epoch 0 completed | tr_loss: 9542.2517
+>> VALIDATION: Epoch 0 | te_loss: 133873.5938
+Epoch 1:
+>> TRAIN: Epoch 1 completed | tr_loss: 13277.7952
+>> VALIDATION: Epoch 1 | te_loss: 3768.9167
+Epoch 2:
+>> TRAIN: Epoch 2 completed | tr_loss: 2926.2454
+>> VALIDATION: Epoch 2 | te_loss: 3670.1587
+Epoch 3:
+>> TRAIN: Epoch 3 completed | tr_loss: 2809.2666
+>> VALIDATION: Epoch 3 | te_loss: 3703.8574
+Epoch 4:
+>> TRAIN: Epoch 4 completed | tr_loss: 2788.8830
+>> VALIDATION: Epoch 4 | te_loss: 3730.5024
+7. Investigate results
+prediction accuracy : 83.3532527089119 %  ( 480.2586669921875  total margin (pred-truth/20) for  2885.0  predicted ratings )
