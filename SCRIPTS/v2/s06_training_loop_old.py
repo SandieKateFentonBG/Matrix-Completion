@@ -1,5 +1,5 @@
 import numpy as np
-from s05_running_loss import *
+from SCRIPTS.v2.s05_running_loss import *
 
 def training_loop(model, optimizer, num_epochs, trainloader, testloader, device, regul, folder = None, VISU = True,
                   reference = None):

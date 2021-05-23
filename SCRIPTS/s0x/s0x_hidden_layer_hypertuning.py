@@ -37,7 +37,7 @@ def I_Autorec_model(project = project, database = database, date = date, selecte
     user_data = load_data(input_path)
     sections = split_data(mystudy.database_group_split, user_data)
     test_section = sections[mystudy.selected_group]
-    studied_data = selected_data(test_section, mystudy.study)
+    studied_data = selected_data(test_section, mystudy.i_u_study)
     x_train, x_test, x_val = split_train_test_validate_data(studied_data)
     trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val, mystudy.batch_size)
     data_initialization_print(x_train, x_test, x_val, folder=folder, VISU = VISU)

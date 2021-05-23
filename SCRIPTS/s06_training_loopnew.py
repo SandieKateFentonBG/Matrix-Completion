@@ -1,21 +1,20 @@
 import numpy as np
-from s05_running_loss import *
+from s05_running_lossnew import *
 
-def training_loop(model, optimizer, num_epochs, number_groups = 1, trainloader, testloader, device, regul, folder = None, VISU = True,
-                  reference = None):
-    # TODO : check < number_groups = 1
+def training_loop(model, optimizer, mystudy, trainloader, testloader, VISU = True):
+
     best_val_acc = np.inf #TODO : check this??
-    autorec_te_losses = np.zeros(num_epochs) #TODO : or num_epochs * number_groups?
-    rmse_te_losses = np.zeros(num_epochs)
-    te_accuracies = np.zeros(num_epochs)
-    autorec_tr_losses = np.zeros(num_epochs)
-    autorec_tr_accuracies = np.zeros(num_epochs)
+    autorec_te_losses = np.zeros(mystudy.num_epochs)
+    rmse_te_losses = np.zeros(mystudy.num_epochs)
+    te_accuracies = np.zeros(mystudy.num_epochs)
+    autorec_tr_losses = np.zeros(mystudy.num_epochs)
+    autorec_tr_accuracies = np.zeros(mystudy.num_epochs)
 
-    for epoch_nr in range(num_epochs):
-        # TODO : this could be wher you iterate over groups
+    for epoch_nr in range(mystudy.num_epochs):
+
         # Train model
-        tr_dict = run_training(trainloader, optimizer, model, device, regul)
-        te_dict = run_testing(testloader, model, device, regul)
+        tr_dict = run_training(trainloader, optimizer, model, mystudy)
+        te_dict = run_testing(testloader, model, mystudy)
 
         te_loss = te_dict['autorec_te_loss']
         rmse_loss = te_dict['rmse_te_loss']
@@ -30,27 +29,16 @@ def training_loop(model, optimizer, num_epochs, number_groups = 1, trainloader, 
         autorec_tr_losses[epoch_nr] = tr_loss
         autorec_tr_accuracies[epoch_nr] = tr_acc
 
-
-        # Save model if best accuracy on validation dataset until now
+        # Save model if higher accuracy
         if te_acc > best_val_acc:
-            best_val_acc = te_acc #TODO : check this??
+            best_val_acc = te_acc #
             torch.save(model.state_dict(), './cifar_net.pth')
-
-        if folder:
-            with open(folder + reference + ".txt", 'a') as f:
-                print("Epoch {}:".format(epoch_nr), file=f)
-                print('>> TRAIN: Epoch {} completed | tr_loss: {:.4f}'.format(epoch_nr, tr_loss), file=f)
-                print('>> VALIDATION: Epoch {} | rmse_te_loss: {:.4f}'.format(epoch_nr, rmse_loss), file=f)
-                if te_loss > best_val_loss:
-                    print('>> SAVE: Epoch {} | Model saved'.format(epoch_nr), file=f)
-            f.close()
 
         if VISU:
             print("Epoch {}:".format(epoch_nr))
             print('>> TRAIN: Epoch {} completed | tr_loss: {:.4f}'.format(epoch_nr, tr_loss))
             print('>> VALIDATION: Epoch {} | rmse_te_loss: {:.4f}'.format(epoch_nr, rmse_loss))
-            if te_loss > best_val_loss:
-                print('>> SAVE: Epoch {} | Model saved'.format(epoch_nr))
+
     if VISU:
         print('Training finished')
 
@@ -63,5 +51,9 @@ def training_loop(model, optimizer, num_epochs, number_groups = 1, trainloader, 
     loop_dict['best_val_acc'] = best_val_acc
 
     return loop_dict
+
+
+
+
 
 

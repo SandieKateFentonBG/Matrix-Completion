@@ -25,7 +25,7 @@ def selected_data(user_data, study) :
     return combined_data[study]
 
 def split_train_test_validate_data(studied_data):
-    # split into training (81%), validation(9%) and test sets(10%)   #TODO: repeat 5 times? shuffle? mean/scale/normalize?
+    # split into training (81%), validation(9%) and test sets(10%)   #TODO:  mean/scale/normalize?
     N_split = int(0.9 * studied_data.shape[0])
     x_temp = studied_data[:N_split, :]
     x_test = studied_data[N_split:, :]
@@ -44,37 +44,44 @@ def create_data_loader(x_train, x_test, x_val, batch_size):
     valloader = torch.utils.data.DataLoader(construct_tensor(x_val), batch_size=batch_size, shuffle=False)
     return trainloader, testloader, valloader
 
-def data_initialization_print(x_train, x_test, x_val, folder=None, new_folder=False, VISU = False, reference = None ):
-    from s10_helper_functions import mkdir_p
-    # Print data
-    if VISU :
-        print('2. Data initialization')
-        print("train :", x_train.shape)
-        print("test :", x_test.shape)
-        print("validate :", x_val.shape)
+def data_initialization(mystudy):
 
-    # Export data
+    mydata = load_data(mystudy.input_path)
+    sections = split_data(mystudy.database_group_split, mydata)
+    test_section = sections[mystudy.selected_group]
+    studied_data = selected_data(test_section, mystudy.i_u_study)
+    x_train, x_test, x_val = split_train_test_validate_data(studied_data)
+    trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val, mystudy.batch_size)
+
+    data_dict = dict()
+    data_dict['x_train'] = x_train
+    data_dict['x_test'] = x_test
+    data_dict['x_val'] = x_val
+    data_dict['trainloader'] = trainloader
+    data_dict['testloader'] = testloader
+    data_dict['valloader'] = valloader
+
+    return data_dict
+
+def data_initialization_print(mystudy, data_dict, folder=None, new_folder=False, VISU=False):
+
+    from s10_export_resultsnew import mkdir_p
+    # Print data
     if new_folder:
-        # Create new directory
-        output_dir = folder
-        mkdir_p(output_dir)
-    if folder :
-        with open(folder + reference + ".txt", 'a') as f:
-            print('2. Data initialization', file=f)
-            print("  train :", x_train.shape, file=f)
-            print("  test :", x_test.shape, file=f)
-            print("  validate :", x_val.shape, file=f)
+        mkdir_p(folder)
+    keys = ['x_train', 'x_test', 'x_val']
+    for k, v in data_dict.items():
+        if VISU:
+            print(k, v.shape)
+    if folder:
+        with open(folder + mystudy.reference + ".txt", 'a') as f:
+            print(k, v.shape)
         f.close()
 
-def sanity_check(dataloader, new_folder=False, folder = None):
+def sanity_check(dataloader):
     # Get random training ratings
     dataiter = iter(dataloader)
     example_ratings = dataiter.next()
-    if new_folder:
-        from s10_helper_functions import mkdir_p
-        mkdir_p(folder)
-    if folder :
-        with open(folder + "results.txt", 'a') as f:
-            print('example_ratings : ', example_ratings, file=f)
-        f.close()
     return example_ratings
+
+

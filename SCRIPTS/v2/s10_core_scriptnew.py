@@ -1,5 +1,5 @@
-from s09_I_autorec_model import *
-from s08_regularization_hypertuning import *
+from SCRIPTS.v2.s08_regularization_hypertuning import *
+from s08_matrix_completionnew import *
 
 #Reference
 project = 'Matrix-Completion'
@@ -23,10 +23,12 @@ studied_attr = ['selected_group','hidden_dim','num_epochs','learning_rate','regu
 #TODO : chexk sparse bp
 
 #Default AE
-default_AE = I_Autorec_model(project = project, database = database, date = date, selected_group=selected_group_parameters[0],
+default_AE = matrix_completion(project = project, database = database, date = date, selected_group=selected_group_parameters[0],
                              hidden_dim=hidden_dim_parameters[8], num_epochs=num_epochs_parameters[0],
                              learning_rate=learning_rate_parameters[1], regularization_term=regularization_term_parameters[0],
                              studied_attr = 'selected_group', VISU = True, new_folder=True, folder = True)
+
+default_AE.__setitem__(key, val)
 
 # myAE = [mystudy = 0, x_train = 1, x_test = 2, x_val = 3, trainloader = 4, testloader = 5, valloader = 6, model = 7,
 # tr_losses = 8, te_losses = 9, rmse_losses = 10, best_val_loss = 11, perc_acc = 12]

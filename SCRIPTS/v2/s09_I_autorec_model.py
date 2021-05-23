@@ -1,8 +1,8 @@
-from s01_parameter_selection import *
-from s02_data_initialization import *
-from s03_model_definition import *
-from s06_training_loop import *
-from s07_investigate_results import *
+from SCRIPTS.v2.s01_parameter_selection import *
+from SCRIPTS.v2.s02_data_initialization import *
+from SCRIPTS.v2.s03_model_definition import *
+from SCRIPTS.v2.s06_training_loop import *
+from SCRIPTS.v2.s07_investigate_results import *
 
 def I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epochs, learning_rate, regularization_term,
                     studied_attr = None, val = 'Default', VISU = False, new_folder=False, folder = None, reference = None):
@@ -46,7 +46,8 @@ def I_Autorec_model(project, database, date, selected_group, hidden_dim, num_epo
 
 
     #TODO: set model results in class
-    model.rmse_loss =
+    model.__setitem__(self, key, val)
+
 
     #TODO: set model results in class
 

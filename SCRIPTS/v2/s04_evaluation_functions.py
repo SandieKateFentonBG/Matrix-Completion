@@ -5,7 +5,7 @@ def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
-def autorec_loss(prediction, groundtruth, model, regul=None): #TODO : OK - custom loss does not have to inherit from module/class loss?
+def autorec_loss(prediction, groundtruth, model, regul=None):
 
     mask = groundtruth != 99.0
     sparse_loss_matrix = torch.square(mask *(groundtruth - prediction)) #TODO : check sparsity here

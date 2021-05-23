@@ -1,4 +1,4 @@
-from s04_evaluation_functions import *
+from SCRIPTS.v2.s04_evaluation_functions import *
 
 def autorec_tr_loss(dataloader, optimizer, model, device, regul = 0.5):
 
