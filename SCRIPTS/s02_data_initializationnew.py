@@ -70,12 +70,13 @@ def data_initialization_print(mystudy, data_dict, folder=None, new_folder=False,
     if new_folder:
         mkdir_p(folder)
     keys = ['x_train', 'x_test', 'x_val']
-    for k, v in data_dict.items():
+    for k in keys:
+        #v in data_dict.items():
         if VISU:
-            print(k, v.shape)
+            print(k, data_dict[k].shape)
     if folder:
         with open(folder + mystudy.reference + ".txt", 'a') as f:
-            print(k, v.shape)
+            print(k,data_dict[k].shape, file=f)
         f.close()
 
 def sanity_check(dataloader):

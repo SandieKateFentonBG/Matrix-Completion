@@ -1,6 +1,4 @@
 def mkdir_p(mypath):
-    '''Creates a directory. equivalent to using mkdir -p on the command line'''
-
     from errno import EEXIST
     from os import makedirs,path
 
@@ -12,45 +10,95 @@ def mkdir_p(mypath):
         else: raise
 
 
-def export_results_as_csv(results_list):
+def export_single_results_as_csv(AE_results):
 
     from itertools import zip_longest
+    import csv
 
-    path = results_list[0].case_study.output_path
-    ref = results_list[0].case_study.date
+    path = AE_results.case_study.output_path
+    ref = AE_results.case_study.date
 
     d = dict()
 
-    for k, v in model_result.case_study.__dict__.items():
-        d[k] = mydict
-    for k, v in model_result.__dict__.items():
-        d[k] = mydict
-    export_data = zip_longest(*d, fillvalue='')
+    for k, v in AE_results.case_study.__dict__.items():
+        d[k] = v
+        """
+        d['autorec_te_losses'] = AE_list[i].te_losses
+        d['rmse_te_losses'] = AE_list[i].rmse_te_losses
+        d['te_accuracies'] = AE_list[i].te_accuracies
+        d['autorec_tr_losses'] = AE_list[i].tr_losses
+        d['tr_accuracies'] = AE_list[i].tr_accuracies
+        d['best_val_acc'] = AE_list[i].best_val_acc
+        for k, v in AE_results.__dict__.items():
+            d[k] = v"""
+
+    #export_data = zip_longest(*d, fillvalue='')
 
     with open(path + ref + '.csv', 'w', encoding="ISO-8859-1", newline='') as myfile:
         wr = csv.writer(myfile)
-        wr.writerow(mystudy.__dict__.keys())
-        wr.writerows(export_data)
+        wr.writerow(d.keys())
+        wr.writerow(d.values())
 
     myfile.close()
 
-
-    """ 
-    model_result.case_study.__dict__.items()
-    model_result.tr_losses = tr_losses
-    model_result.te_losses = te_losses
-    model_result.rmse_te_losses = rmse_te_losses
-    model_result.te_accuracies = te_accuracies
-    model_result.best_val_acc = best_val_acc
-    model_result.tr_accuracies = tr_accuracies"""
-
-def export_results_as_csvold(path, res_dict, filename="results"):
+def export_multiple_results_as_csv(AE_list):
 
     from itertools import zip_longest
-    d = [res_dict[key] for key in res_dict.keys()]
-    export_data = zip_longest(*d, fillvalue='')
-    with open(path + filename + '.csv', 'w', encoding="ISO-8859-1", newline='') as myfile:
+    import csv
+
+    path = AE_list[0].case_study.output_path
+    ref = AE_list[0].case_study.date
+
+    for i in range(len(AE_list)):
+        d = dict()
+        for k, v in AE_list[i].case_study.__dict__.items():
+            d[k] = v
+        for k, v in AE_list[i].__dict__.items():
+            d[k] = v
+        export_data = zip_longest(*d, fillvalue='')
+
+        with open(path + ref + '.csv', 'w', encoding="ISO-8859-1", newline='') as myfile:
+            wr = csv.writer(myfile)
+            wr.writerow(d.keys())
+            wr.writerows(export_data)
+        myfile.close()
+
+
+def my_export(AE_list):
+
+    from itertools import zip_longest
+    import csv
+
+    path = AE_list[0].case_study.output_path
+    ref = AE_list[0].case_study.date
+
+    d = dict()
+    d['group'] = []
+    d['hidden_dim'] = []
+    d['regularization'] = []
+    d['autorec_te_losses'] = []
+    d['rmse_te_losses'] = []
+    d['te_accuracies'] = []
+    d['autorec_tr_losses'] = []
+    d['tr_accuracies'] = []
+    d['best_val_acc'] = []
+    export_data = []
+    for i in range(len(AE_list)):
+        d['group'].append(AE_list[i].case_study.selected_group)
+        d['hidden_dim'].append(AE_list[i].case_study.hidden_dim)
+        d['regularization'].append(AE_list[i].case_study.regularization_term)
+        d['autorec_te_losses'].append(AE_list[i].te_losses)
+        d['rmse_te_losses'].append(AE_list[i].rmse_te_losses)
+        d['te_accuracies'].append(AE_list[i].te_accuracies)
+        d['autorec_tr_losses'].append(AE_list[i].tr_losses)
+        d['tr_accuracies'].append(AE_list[i].tr_accuracies)
+        d['best_val_acc'].append(AE_list[i].best_val_acc)
+        export_data.append(zip_longest(*d, fillvalue=''))
+
+    with open(path + ref + '.csv', 'w', encoding="ISO-8859-1", newline='') as myfile:
         wr = csv.writer(myfile)
-        wr.writerow(res_dict.keys())
+        wr.writerow(d.keys())
         wr.writerows(export_data)
     myfile.close()
+
+

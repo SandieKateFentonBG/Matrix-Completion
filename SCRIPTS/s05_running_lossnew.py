@@ -13,7 +13,7 @@ def run_training(dataloader, optimizer, model, mystudy): #todo : new name
         # Predict and get loss
         pred = model(batch_data).to(mystudy.device)
         # x > forward prop > get first prediction - y
-        loss = autorec_loss(pred, batch_data, model, mystudy.regularization_term)
+        loss = autorec_loss(pred, batch_data, model, regul = mystudy.regularization_term)
         # f(x - y) - initial loss
 
         # Update model
@@ -28,7 +28,7 @@ def run_training(dataloader, optimizer, model, mystudy): #todo : new name
         running_acc += compute_acc(pred, batch_data)
 
     tr_loss = running_loss / len(dataloader.dataset) #tr_loss = scalar
-    tr_acc = 100 * running_acc/len(dataloader.dataset)
+    tr_acc = running_acc/len(dataloader.dataset)
 
     loss_dict = dict()
     loss_dict['autorec_tr_loss'] = tr_loss
@@ -36,8 +36,6 @@ def run_training(dataloader, optimizer, model, mystudy): #todo : new name
 
     return loss_dict
 
-    #print('>> TRAIN: Epoch {} completed | tr_loss: {:.4f} | tr_acc: {:.2f}%'.format(
-    #    epoch_nr, running_loss / len(trainloader.dataset), tr_acc))
 
 
 
@@ -52,11 +50,12 @@ def run_testing(testloader, model, mystudy):
             batch_data = batch_data.to(mystudy.device)
             output = model(batch_data)
             running_autorec_loss += autorec_loss(output, batch_data, model, regul = None) # no regul when testing
+            running_rmse_loss += RMSELoss(batch_data, output)
             running_acc += compute_acc(output, batch_data)
 
     te_loss = running_autorec_loss / len(testloader.dataset)
     rmse_loss = running_rmse_loss / len(testloader.dataset)
-    te_acc = 100 * running_acc/len(testloader.dataset)
+    te_acc = running_acc/len(testloader.dataset)
 
     loss_dict = dict()
     loss_dict['autorec_te_loss'] = te_loss

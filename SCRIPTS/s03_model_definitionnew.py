@@ -33,5 +33,5 @@ def model_definition_print(model, optimizer, folder=False, new_folder=False, VIS
         with open(folder + reference + ".txt", 'a') as f:
             print(' model', model, file=f)
             print(' optimizer', optimizer, file=f)
-            print(" number of trainable parameters: {}".format(count_parameters(model)))
+            print(" number of trainable parameters: {}".format(count_parameters(model)), file=f)
         f.close()

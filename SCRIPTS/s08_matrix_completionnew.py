@@ -30,8 +30,10 @@ def matrix_completion(project, database, date, repository,
     loop_dict = training_loop(model, optimizer, mystudy, data_dict['trainloader'], data_dict['testloader'],VISU = VISU)
 
     #STORE RESULTS
-    matrix_results = model_results(model, mystudy, loop_dict['tr_losses'], loop_dict['te_losses'], loop_dict['rmse_te_losses'],
+    matrix_results = model_results(model, optimizer, mystudy, loop_dict['tr_losses'], loop_dict['te_losses'], loop_dict['rmse_te_losses'],
                          loop_dict['te_accuracies'], loop_dict['best_val_acc'], loop_dict['tr_accuracies'])
-    model_results_print(model_results, mystudy, folder=mystudy.output_path, new_folder=False, VISU=False)
+    model_results_print(matrix_results, folder=mystudy.output_path, new_folder=False, VISU=VISU)
+
 
     return matrix_results
+

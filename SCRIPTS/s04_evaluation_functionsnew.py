@@ -18,14 +18,23 @@ def RMSELoss(groundtruth, prediction):
 
     return torch.sqrt(torch.mean((groundtruth - prediction) ** 2))
 
-def compute_acc(pred, groundtruth, mask = 99.0, range = 20, round = False):
+
+def compute_acc(pred, groundtruth, mask=99.0, threshold=2):
+
+    ones = torch.ones_like(groundtruth)
+    sparse_mask = groundtruth != mask
+    threshold_mask = torch.abs(groundtruth - pred) <= threshold
+
+    return torch.sum(ones * threshold_mask * sparse_mask)/torch.sum(ones * sparse_mask)
+
+def compute_acc2(pred, groundtruth, mask = 99.0, range = 20, round = False):
 
     bool_mask = groundtruth != mask
     if round:
         groundtruth = torch.round(groundtruth)
         pred = torch.round(pred)
     scaled_diff = torch.abs(groundtruth - pred) / range
-    masked_perc = torch.sum(scaled_diff * bool_mask)/torch.sum(torch.ones_like(batch_data) * bool_mask)
+    masked_perc = torch.sum(scaled_diff * bool_mask)/torch.sum(torch.ones_like(groundtruth) * bool_mask)
     acc = 100 * (1 - masked_perc.item())
 
     return acc
