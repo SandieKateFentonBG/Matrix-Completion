@@ -1,0 +1,2 @@
+date,reference,input_path,output_path,i_u_study,database_group_split,selected_group,batch_size,input_dim,hidden_dim,num_epochs,learning_rate,regularization_term,device
+210523,group_0_h_dim_500_regul_10.0,C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv,C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210523_results/,0,2,0,8,"[7699, 158]",500,5,0.001,0.01,cuda:0

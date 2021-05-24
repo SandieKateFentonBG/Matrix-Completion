@@ -1,0 +1,50 @@
+  date  :  210523
+  reference  :  group_0_h_dim_20_regul_1.0
+  input_path  :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+  output_path  :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210523_results/
+  i_u_study  :  0
+  database_group_split  :  2
+  selected_group  :  0
+  batch_size  :  8
+  input_dim  :  [7699, 158]
+  hidden_dim  :  20
+  num_epochs  :  10
+  learning_rate  :  0.01
+  regularization_term  :  0.001
+  device  :  cuda:0
+x_val (15, 3849)
+ model Autorec(
+  (hidden): Linear(in_features=3849, out_features=20, bias=True)
+  (predict): Linear(in_features=20, out_features=3849, bias=True)
+)
+ optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.01
+    step_sizes: (1e-06, 50)
+)
+ number of trainable parameters: 157829
+  model  :  Autorec(
+  (hidden): Linear(in_features=3849, out_features=20, bias=True)
+  (predict): Linear(in_features=20, out_features=3849, bias=True)
+)
+  optimizer  :  Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.01
+    step_sizes: (1e-06, 50)
+)
+  case_study  :  <s01_parameter_selectionnew.case_study object at 0x0000025CC8D16730>
+  tr_losses  :  [1851648.92971826   67032.09611836    8403.90080586    7665.68062562
+    7554.23935778    7523.28980069    7509.14331631    7494.62115527
+    7470.45723118    7455.55554872]
+  te_losses  :  [128523.046875    14337.6484375   11772.00976562  11590.83203125
+  11457.28125     11583.9453125   11494.17578125  11528.63476562
+  11410.73535156  11474.13183594]
+  rmse_te_losses  :  [11.62901306 11.60340881 11.60815811 11.60770035 11.60809612 11.60853767
+ 11.60852051 11.60869789 11.60847855 11.60865211]
+  te_accuracies  :  [0.00667513 0.0215009  0.02729408 0.02770245 0.02778476 0.02779632
+ 0.02813516 0.02781915 0.0281347  0.02776178]
+  best_val_acc  :  tensor(0.0281, device='cuda:0')
+  tr_accuracies  :  [0.01014759 0.01405227 0.02774636 0.03119569 0.03182328 0.03138161
+ 0.03221451 0.03179287 0.03217891 0.03212059]

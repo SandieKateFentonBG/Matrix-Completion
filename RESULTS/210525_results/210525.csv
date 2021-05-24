@@ -1,0 +1,1 @@
+group,hidden_dim,regularization,autorec_te_losses,rmse_te_losses,te_accuracies,autorec_tr_losses,tr_accuracies,best_val_acc

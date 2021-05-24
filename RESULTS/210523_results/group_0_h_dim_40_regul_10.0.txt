@@ -1,0 +1,50 @@
+  date  :  210523
+  reference  :  group_0_h_dim_40_regul_10.0
+  input_path  :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+  output_path  :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210523_results/
+  i_u_study  :  0
+  database_group_split  :  2
+  selected_group  :  0
+  batch_size  :  8
+  input_dim  :  [7699, 158]
+  hidden_dim  :  40
+  num_epochs  :  10
+  learning_rate  :  0.01
+  regularization_term  :  0.01
+  device  :  cuda:0
+x_val (15, 3849)
+ model Autorec(
+  (hidden): Linear(in_features=3849, out_features=40, bias=True)
+  (predict): Linear(in_features=40, out_features=3849, bias=True)
+)
+ optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.01
+    step_sizes: (1e-06, 50)
+)
+ number of trainable parameters: 311809
+  model  :  Autorec(
+  (hidden): Linear(in_features=3849, out_features=40, bias=True)
+  (predict): Linear(in_features=40, out_features=3849, bias=True)
+)
+  optimizer  :  Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.01
+    step_sizes: (1e-06, 50)
+)
+  case_study  :  <s01_parameter_selectionnew.case_study object at 0x0000025CC61B19D0>
+  tr_losses  :  [5589227.30874754    9210.40079048    7245.1453694     7060.31246924
+    7020.11578802    7006.40285125    7001.05253445    6997.39460814
+    6994.2640948     6989.48231422]
+  te_losses  :  [24044.46875     9756.06835938  9374.98925781  9416.484375
+  9412.8046875   9428.58398438  9425.62304688  9436.38085938
+  9415.51953125  9416.65234375]
+  rmse_te_losses  :  [11.6305809  11.62791634 11.62812805 11.62812042 11.6280365  11.62783241
+ 11.62783051 11.62778282 11.6278801  11.6278553 ]
+  te_accuracies  :  [0.01455056 0.03381237 0.03823907 0.03742714 0.03799735 0.03800643
+ 0.03810227 0.03801922 0.03835493 0.03821256]
+  best_val_acc  :  tensor(0.0384, device='cuda:0')
+  tr_accuracies  :  [0.00626017 0.02811861 0.03459347 0.03604059 0.03627591 0.03660538
+ 0.03678709 0.03746    0.03670584 0.03740962]
