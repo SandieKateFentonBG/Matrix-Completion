@@ -1,19 +1,32 @@
 
 from mc_tr_09_initial_weighting import *
+from mc_tr_10_parameter_calibration import *
 
 
 #Reference
 project = 'Matrix-Completion'
 database = 'JesterDataset4/JesterDataset4.csv'
-date = "210527"
+date = "210527-autorec2"
 repository = "C:/Users/sfenton/Code/Repositories/"
 
 # 1. SINGLE MODEL
 
-dict = mc_training_basic(project, database, date, repository,
-            i_u_study = 0, database_group_split = 5, selected_group = 0, batch_size = 8, input_dim = [7699, 158],
-                hidden_dim = 500, num_epochs = 5, learning_rate = 0.001, regularization_term = 10, device = 'cuda:0',
-                    VISU = True, new_folder=True, threshold = 3)
+training_dict = mc_training_set_up(project, database, date, repository,
+                          i_u_study = 0, database_group_split = 5, selected_group = 0, batch_size = 8, input_dim = [7699, 158],
+                          hidden_dim = 500, num_epochs = 5, learning_rate = 0.001, regularization_term = 10, device = 'cuda:0',
+                          VISU = True, new_folder=True, threshold = 3)
+
+
+hidden_list = [300, 400, 500]
+regul_list = [0.1, 0.5, 2]  #[0.001, 0.01, 0.1, 1, 100, 1000]
+
+calibration_dict = mc_training_calibration(training_dict['data_dict'], training_dict['mydata'], training_dict['myparams'], training_dict['model'],
+                                         training_dict['optimizer'], row_variable = regul_list,
+                            column_variable = hidden_list, row_label = 'regul_term', column_label = 'hidden_dim',
+                            threshold = 3, score = 'rmse_te_losses', VISU=True, new_folder=True)
+
+print(calibration_dict['score_matrix'])
+
 #DISPLAY MODEL
 #print(m_c_results)
 #model_print(model)

@@ -45,20 +45,28 @@ def net_calibration(model, optimizer, mydata, myparams, reference, trainloader, 
                 'best_val_acc': best_val_acc,
             }, mydata.output_path + reference)
 
+            best_score_dict = dict()
+            best_score_dict['te_losses'] = autorec_te_losses[epoch_nr]
+            best_score_dict['rmse_te_losses'] = rmse_te_losses[epoch_nr]
+            best_score_dict['te_accuracies'] = te_accuracies[epoch_nr]
+            best_score_dict['tr_losses'] = autorec_tr_losses[epoch_nr]
+            best_score_dict['tr_accuracies'] = autorec_tr_accuracies[epoch_nr],
+            best_score_dict['best_val_acc'] = best_val_acc
+
             print('>> SAVE: Epoch {} | Model saved'.format(epoch_nr))
 
     if VISU:
         print('Training finished')
 
-    loss_dict = dict()
-    loss_dict['te_losses'] = autorec_te_losses
-    loss_dict['rmse_te_losses'] = rmse_te_losses
-    loss_dict['te_accuracies'] = te_accuracies
-    loss_dict['tr_losses'] = autorec_tr_losses
-    loss_dict['tr_accuracies'] = autorec_tr_accuracies
-    loss_dict['best_val_acc'] = best_val_acc
+    loss_evolution_dict = dict()
+    loss_evolution_dict['te_losses'] = autorec_te_losses
+    loss_evolution_dict['rmse_te_losses'] = rmse_te_losses
+    loss_evolution_dict['te_accuracies'] = te_accuracies
+    loss_evolution_dict['tr_losses'] = autorec_tr_losses
+    loss_evolution_dict['tr_accuracies'] = autorec_tr_accuracies
+    loss_evolution_dict['best_val_acc'] = best_val_acc
 
-    return loss_dict
+    return loss_evolution_dict, best_score_dict
 
 def loss_calibration_print(loss_dict, reference, output_path=None, VISU=False):
 
@@ -69,5 +77,6 @@ def loss_calibration_print(loss_dict, reference, output_path=None, VISU=False):
             with open(output_path + reference + ".txt", 'a') as f:
                 print(' ', k, ' : ', v, file=f)
             f.close()
+
 
 

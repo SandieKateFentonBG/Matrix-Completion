@@ -13,7 +13,7 @@ def autorec_loss(prediction, groundtruth, model, regul=None):
 
     return loss
 
-def autorec_loss2(prediction, groundtruth, model, regul=None):
+def autorec_loss2(prediction, groundtruth, model, regul=None): #TODO: replace
 
     mask = groundtruth != 99.0
     sparse_loss_matrix = torch.square(mask *(groundtruth - prediction)) #TODO : check sparsity here

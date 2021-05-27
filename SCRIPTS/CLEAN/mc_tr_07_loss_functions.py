@@ -14,12 +14,15 @@ def training_loss(dataloader, optimizer, model, myparams, threshold): #todo : ne
         pred = model(batch_data).to(myparams.device)
         # x > forward prop > get first prediction - y
         loss = autorec_loss(pred, batch_data, model, regul = myparams.regularization_term)
+        #loss, sparse_loss_matrix = autorec_loss2(pred, batch_data, model, regul = myparams.regularization_term)
+
         # f(x - y) - initial loss
 
         # Update model
         optimizer.zero_grad()
         # start with empty grad matrix (avoid accumulating gradient (by addition))
         loss.backward()
+        #sparse_loss_matrix.backward()#todo
         # backpropagate loss from y > h > x in a chain rule - compute gradients
         optimizer.step()
         # parameter update based on the current gradient
