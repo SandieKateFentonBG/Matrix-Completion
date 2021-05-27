@@ -1,0 +1,32 @@
+  date  :  210527
+  input_path  :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/DATA/JesterDataset4/JesterDataset4.csv
+  output_path  :  C:/Users/sfenton/Code/Repositories/Matrix-Completion/RESULTS/210527_results/
+  i_u_study  :  0
+  database_group_split  :  5
+  selected_group  :  0
+  batch_size  :  8
+  input_dim  :  [7699, 158]
+x_val (15, 1539)
+  hidden_dim  :  500
+  learning_rate  :  0.001
+  regularization_term  :  0.5
+  num_epochs  :  5
+  device  :  cuda:0
+ model Autorec_net(
+  (hidden): Linear(in_features=1539, out_features=500, bias=True)
+  (predict): Linear(in_features=500, out_features=1539, bias=True)
+)
+ optimizer Rprop (
+Parameter Group 0
+    etas: (0.5, 1.2)
+    lr: 0.001
+    step_sizes: (1e-06, 50)
+)
+ number of trainable parameters: 1541039
+  te_losses  :  [7276.46923828 4194.82910156 3998.94702148 4000.20996094 4009.28344727]
+  rmse_te_losses  :  [11.62934971 11.61670589 11.61953735 11.62013626 11.61969376]
+  te_accuracies  :  [0.02995589 0.04907959 0.05200385 0.05450117 0.05398516]
+  tr_losses  :  [27121.40491203  4631.79223825  2922.61770654  2759.29592151
+  2718.75961184]
+  tr_accuracies  :  [0.02138177 0.03890325 0.05077423 0.05392547 0.05550528]
+  best_val_acc  :  0.05450116842985153
