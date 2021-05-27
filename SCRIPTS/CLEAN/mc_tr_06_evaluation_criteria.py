@@ -4,7 +4,7 @@ def autorec_loss(prediction, groundtruth, model, regul=None):
 
     mask = groundtruth != 99.0
     sparse_loss_matrix = torch.square(mask *(groundtruth - prediction)) #TODO : check sparsity here
-    loss = torch.sum(sparse_loss_matrix).to(groundtruth.device) #TODO : loss from sparse tensor > sparsity transmitted to backprop?
+    loss = torch.sum(sparse_loss_matrix).to(groundtruth.device)
 
     if regul:
         V_frob_norm = sum([(p ** 2).sum() for p in model.hidden.parameters()]) # parameters = weights + bias
@@ -13,13 +13,26 @@ def autorec_loss(prediction, groundtruth, model, regul=None):
 
     return loss
 
+def autorec_loss2(prediction, groundtruth, model, regul=None):
+
+    mask = groundtruth != 99.0
+    sparse_loss_matrix = torch.square(mask *(groundtruth - prediction)) #TODO : check sparsity here
+    loss = torch.sum(sparse_loss_matrix).to(groundtruth.device)
+
+    if regul:
+        V_frob_norm = sum([(p ** 2).sum() for p in model.hidden.parameters()]) # parameters = weights + bias
+        W_frob_norm = sum([(q ** 2).sum() for q in model.predict.parameters()])
+        loss += 0.5 * regul * (V_frob_norm + W_frob_norm)
+
+    return loss, sparse_loss_matrix
+
 
 def RMSELoss(groundtruth, prediction):
 
     return torch.sqrt(torch.mean((groundtruth - prediction) ** 2))
 
 
-def compute_acc(pred, groundtruth, mask=99.0, threshold=2):
+def result_accuracy(pred, groundtruth, mask=99.0, threshold=2): #TODO : use for inference as well?
 
     ones = torch.ones_like(groundtruth)
     sparse_mask = groundtruth != mask

@@ -16,7 +16,7 @@ class model_results:
 def model_results_print(model_results, folder=None, new_folder=False, VISU = False):
 
     if new_folder:
-        from s10_export_resultsnew import mkdir_p
+        from SCRIPTS.CLEAN.s10_export_resultsnew import mkdir_p
         mkdir_p(model_results.case_study.output_path)
 
     for k, v in model_results.__dict__.items():

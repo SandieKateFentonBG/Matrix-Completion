@@ -38,6 +38,19 @@ def training_loop(model, optimizer, mystudy, trainloader, testloader, VISU = Tru
         # Save model if higher accuracy
         if te_acc > best_val_acc:
             best_val_acc = te_acc #
+
+            torch.save({
+                'epoch': epoch_nr,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'tr_losses': tr_loss,
+                'te_losses': te_loss,
+                'rmse_te_losses':rmse_te_losses,
+                'te_accuracies': te_accuracies,
+                'tr_accuracies': tr_accuracies,
+                'best_val_acc': best_val_acc,
+            }, PATH)
+
             torch.save(model.state_dict(), './jester_model.pth') #TODO : what is this? './cifar_net.pth'?
             print('>> SAVE: Epoch {} | Model saved'.format(epoch_nr))
 
