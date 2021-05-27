@@ -1,0 +1,30 @@
+  te_losses  :  3904.0791015625
+  rmse_te_losses  :  11.63952350616455
+  te_accuracies  :  0.07125496119260788
+  tr_losses  :  2412.091097133366
+  tr_accuracies  :  (0.07598605006933212,)
+  best_val_acc  :  0.07125496119260788
+regul_term  :  2 hidden_dim  :  400
+  te_losses  :  3559.3115234375
+regul_term  :  2 hidden_dim  :  400
+  rmse_te_losses  :  11.635265350341797
+regul_term  :  2 hidden_dim  :  400
+  te_accuracies  :  0.07632096856832504
+regul_term  :  2 hidden_dim  :  400
+  tr_losses  :  2423.208953617126
+regul_term  :  2 hidden_dim  :  400
+  tr_accuracies  :  (0.07762670516967773,)
+regul_term  :  2 hidden_dim  :  400
+  best_val_acc  :  0.07632096856832504
+regul_term  :  2 hidden_dim  :  400
+  te_losses  :  3805.189208984375
+regul_term  :  2 hidden_dim  :  400
+  rmse_te_losses  :  11.648378372192383
+regul_term  :  2 hidden_dim  :  400
+  te_accuracies  :  0.07338198274374008
+regul_term  :  2 hidden_dim  :  400
+  tr_losses  :  2420.4587498462106
+regul_term  :  2 hidden_dim  :  400
+  tr_accuracies  :  (0.07727838307619095,)
+regul_term  :  2 hidden_dim  :  400
+  best_val_acc  :  0.07338198274374008
