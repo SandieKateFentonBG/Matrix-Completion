@@ -12,7 +12,7 @@ from mc_tr_08_net_calibration import *
 def mc_training_set_up(project, database, date, repository,
                        i_u_study = 0, database_group_split = 5, selected_group = 0, batch_size = 8, input_dim = [7699, 158],
                        hidden_dim = 500, num_epochs = 5, learning_rate = 0.001, regularization_term = 0.01, device = 'cuda:0',
-                       VISU = True, new_folder=False, threshold = None):
+                       VISU = False, new_folder=False, threshold = 2):
 
     # STUDY REFERENCE
     reference = model_reference(selected_group = selected_group, hidden_dim = hidden_dim,

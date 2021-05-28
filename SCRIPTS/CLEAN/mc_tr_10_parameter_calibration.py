@@ -23,6 +23,7 @@ def mc_training_calibration(data_dict, mydata, default_params, model, optimizer,
                                            score_dict=best_score_dict, output_path=mydata.output_path, VISU=VISU)
 
             #results_matrix[r][h] = best_score_dict
+            results_matrix[r][h] = best_score_dict['te_losses']
             score_matrix[r][h] = best_score_dict[score]
 
     return {'results_matrix': results_matrix, 'score_matrix': score_matrix, 'myparams': default_params, 'model' : model, 'optimizer': optimizer}

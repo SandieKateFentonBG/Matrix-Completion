@@ -2,7 +2,7 @@ import numpy as np
 from mc_tr_05_Autorec_net import *
 from mc_tr_07_loss_functions import *
 
-def net_calibration(model, optimizer, mydata, myparams, reference, trainloader, testloader, VISU = True, threshold = None):
+def net_calibration(model, optimizer, mydata, myparams, reference, trainloader, testloader, VISU = False, threshold = None):
 
     best_val_acc = 0  #TODO : check this?np.inf?
     autorec_te_losses = np.zeros(myparams.num_epochs)
@@ -13,6 +13,8 @@ def net_calibration(model, optimizer, mydata, myparams, reference, trainloader, 
 
     for epoch_nr in range(myparams.num_epochs):
 
+        # if epoch_nr==8:
+        #     a = 2
         # Train model
         tr_dict = training_loss(trainloader, optimizer, model, myparams, threshold = threshold)
         autorec_tr_losses[epoch_nr] = tr_dict['autorec_tr_loss']
@@ -50,7 +52,7 @@ def net_calibration(model, optimizer, mydata, myparams, reference, trainloader, 
             best_score_dict['rmse_te_losses'] = rmse_te_losses[epoch_nr]
             best_score_dict['te_accuracies'] = te_accuracies[epoch_nr]
             best_score_dict['tr_losses'] = autorec_tr_losses[epoch_nr]
-            best_score_dict['tr_accuracies'] = autorec_tr_accuracies[epoch_nr],
+            best_score_dict['tr_accuracies'] = autorec_tr_accuracies[epoch_nr]
             best_score_dict['best_val_acc'] = best_val_acc
 
             print('>> SAVE: Epoch {} | Model saved'.format(epoch_nr))

@@ -1,5 +1,16 @@
 import torch
-from s03_model_definitionnew import *
+from mc_tr_03_data import *
+
+import pickle
+
+def pickleLoadMe(input_path, name, show = False):
+    with open(input_path + name, 'rb') as handle:
+        mydict = pickle.load(handle)
+    if show:
+        print(name)
+        for k, v in mydict.items():
+                print(' ', k, ' : ', v)
+    return mydict
 
 def model_print(model):
     # Print model's state_dict

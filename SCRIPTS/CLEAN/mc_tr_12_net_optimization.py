@@ -1,5 +1,5 @@
 
-from mc_tr_11_initial_training import *
+from mc_tr_09_initial_weighting import *
 
 
 def identify_tuning_parameter(param_dict):
@@ -16,32 +16,6 @@ def identify_tuning_parameter(param_dict):
     device = param_dict['device']
 
     return [[regul_list,hidden_list],[i_u_study,database_group_split, selected_group, batch_size, input_dim, num_epochs, learning_rate, device ]]
-
-def mc_training_calibration(data_dict, mydata, default_params, model, optimizer, row_variable = regul_list,
-                            column_variable = hidden_list, row_label = 'regul_term', column_label = 'hidden_dim',
-                            threshold = None, score = 'rmse_te_losses'):
-
-    results_matrix = np.zeros(len(row_variable), len(column_variable))
-    score_matrix = np.zeros(len(row_variable), len(column_variable))
-    for r in range(len(row_variable)):
-        default_params.regularization_term = row_variable[r]
-        for h in range(len(column_variable)):
-            default_params.hidden_dim = column_variable[h]
-            reference = model_reference(selected_group=mydata.selected_group, hidden_dim=column_variable[h],
-                                        regularization_term=row_variable[r], extra=threshold)
-
-            # CALIBRATE MODEL
-            loss_evolution_dict, best_score_dict = net_calibration(model, optimizer, mydata, default_params, reference, data_dict['trainloader'],
-                                        data_dict['testloader'], VISU=VISU, threshold=threshold)
-
-            training_calibration_print(row_label, row_variable[r], column_label, column_variable[h], reference,
-                                           score_dict=best_score_dict, output_path=mydata.output_path, VISU=VISU)
-
-            results_matrix[r][h] = best_score_dict
-            score_matrix[r][h] = best_score_dict[score]
-
-    return {'results_matrix': results_matrix, 'score_matrix': score_matrix, 'myparams': default_params, 'model' : model, 'optimizer': optimizer, 'loss_dict': loss_dict}
-
 
 def run_model_architectures(param_dict, project, database, date, repository,
                     VISU = True, new_folder = True):
@@ -63,20 +37,21 @@ def run_model_architectures(param_dict, project, database, date, repository,
 
     return AE_list
 
-def tune_model_architectures(x0):
+def tune_model_architectures(project, database, date, repository, model_parameters, method='BFGS'):
 
     from scipy.optimize import minimize
 
-    fun = matrix_completion_function
+    fun = matrix_completion_function(project, database, date, repository,model_parameters)
     #x0 = [0.01, 500]
-    method = 'BFGS'
-    minimize(fun, x0, method=method) #todo : return what?
+    minimize(fun, model_parameters, method=method) #todo : return what? or should i start from a pretrained model?
 
 
-def matrix_completion_function(model_parameters):
+def matrix_completion_function(project, database, date, repository,model_parameters):
 
-    myAE = matrix_completion( hidden_dim = model_parameters[1], regularization_term = model_parameters[0])
-    return - myAE.best_val_acc
+    training_dict = mc_training_set_up(project, database, date, repository, hidden_dim = model_parameters[1], regularization_term = model_parameters[0])
+    return - training_dict['best_score_dict']['best_val_acc']
+
+
 
 
 

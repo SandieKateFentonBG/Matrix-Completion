@@ -1,8 +1,8 @@
 
 from s09_regularization_hypertuningnew import *
 from s10_export_resultsnew import *
-from s12_access_resultsnew import *
-from s11_plot_resultsnew import *
+from mc_tr_15_load_save_functions import *
+from mc_tr_12_result_graphs import *
 
 #Reference
 project = 'Matrix-Completion'

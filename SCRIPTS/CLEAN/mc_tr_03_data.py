@@ -4,9 +4,12 @@ from mc_tr_02_data_preprocessing import *
 def data_initialization(mystudy):
 
     mydata = load_data(mystudy.input_path)
-    sections = split_data(mystudy.database_group_split, mydata)
-    test_section = sections[mystudy.selected_group]
-    studied_data = selected_data(test_section, mystudy.i_u_study)
+    if mystudy.database_group_split > 1 :
+        sections = split_data(mystudy.database_group_split, mydata)
+        test_section = sections[mystudy.selected_group]
+        studied_data = selected_data(test_section, mystudy.i_u_study)
+    else:
+        studied_data = selected_data(mydata, mystudy.i_u_study)
     x_train, x_test, x_val = split_train_test_validate_data(studied_data)
     trainloader, testloader, valloader = create_data_loader(x_train, x_test, x_val, mystudy.batch_size)
 
